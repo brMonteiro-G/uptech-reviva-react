@@ -1,0 +1,163 @@
+@import '../../assets/var';
+
+%expand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: auto;
+    padding: 1%;
+
+    p,
+    h1 {
+        font-size: $font-size-title;
+        font-weight: $font-weight-title;
+        margin: auto 0 auto 0;
+    }
+
+    small {
+        font-size: $font-size-text;
+        font-weight: $font-weight-text;
+        padding-bottom: 1em;
+    }
+}
+
+
+.footer--items {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1.5fr;
+    grid-template-rows: 280px;
+    padding: 1%;
+    justify-content: space-around;
+
+    & ul:nth-child(2n)>li {
+        margin-bottom: 0;
+    }
+
+    & ul>li:nth-child(1) {
+        font-weight: 700;
+    }
+
+    & li {
+        margin: 20px;
+    }
+
+    .contacts--logo {
+        display: flex;
+        align-items: center;
+    }
+
+}
+
+.footer--button {
+
+    button {
+        background-color: $tertiary-color;
+        color: white;
+        border-radius: 5%;
+
+        &:hover {
+            color: black;
+        }
+    }
+
+    input {
+        width: 280px;
+        height: 32px;
+    }
+}
+
+
+
+.footer {
+    grid-template-columns: repeat(4, 1fr);
+    background-color: $quaternary-color;
+    font-size: $font-size-text;
+
+    & li {
+        margin-top: 12px;
+        font-size: calc($font-size-text*1.1);
+        font-weight: $font-weight-text;
+    }
+}
+
+
+.footer__infos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr) 1.5fr;
+    grid-template-rows: 280px;
+    padding: 1%;
+
+    & ul li:first-child {
+        font-weight: $font-weight-title;
+        margin-bottom: 20px;
+    }
+
+    &--menu,
+    &--networks,
+    &--contact,
+    &--newsletter {
+        list-style: none;
+        text-align: center;
+        justify-content: center;
+    }
+
+    .footer__icons {
+        display: flex;
+        align-items: center;
+        margin: auto;
+        width: 50%;
+        justify-content: space-around;
+
+        &--medias {
+            display: flex;
+            justify-content: space-around;
+            flex-wrap: wrap;
+            margin-top: 5px;
+        }
+
+        &--contact,
+        &--whatsapp {
+
+            width: 24px;
+            height: 24px;
+        }
+
+        &--contact {
+            background-image: url("../../../../public/images/telephone-call.png");
+        }
+
+        &--whatsapp {
+            background-image: url("../../../../public/images/whatsapp.png");
+
+        }
+
+    }
+}
+
+.footer__input {
+    display: flex;
+
+    & input {
+        width: 280px;
+        height: 32px;
+        margin-right: 20px;
+    }
+
+    & button {
+        width: 160px;
+        height: 38px;
+        background-color: $tertiary-color;
+        border: none;
+
+        &:hover {
+            color: white;
+            cursor: pointer;
+        }
+    }
+}
+
+.footer__logo {
+    @extend %expand;
+    width: 318px;
+}
+

@@ -1,7 +1,7 @@
 
 import style from "./index.module.scss"
 import Inventory from "../inventory"
-import { ReactElement, useState } from "react"
+import { ReactElement } from "react"
 import { Button } from "./Button"
 //refatorar inventario 
 
@@ -47,7 +47,6 @@ export default function Products(props: props) {
     return (
         <>
             {
-
                 productsList.map((element, index) => {
                     if (props.texto.includes("1")) {
                         if (index <= 3) {
@@ -65,8 +64,6 @@ export default function Products(props: props) {
 
             }
         </>
-
-
     )
 }
 

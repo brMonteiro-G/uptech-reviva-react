@@ -1,4 +1,3 @@
-import { verify } from "crypto"
 import React, { useState } from "react"
 import Inventory from "../inventory"
 import style from "./index.module.scss"
@@ -10,7 +9,8 @@ export interface Id {
 
 export function Button(props: Id) {
 
-    const [list, setList] = useState(Inventory.inventory)
+    const [productsOnStorage, setProductsOnStorage] = useState(Inventory.inventory)
+    const [productsOnCart, setProductsOnCart] = useState([])
 
     function verifyQuantity(element: Items): void {
         if (element.available_amount - 1 < 0) {
@@ -18,15 +18,22 @@ export function Button(props: Id) {
 
         }
         element.available_amount = element.available_amount - 1
-        setList([...list])
-        localStorage.setItem("Items", JSON.stringify(list))
+        UpdateStorage()
         alert("Produto adicionado ao carrinho")
+    }
+
+    function UpdateStorage() {
+        setProductsOnStorage([...productsOnStorage])
+        localStorage.setItem("Items", JSON.stringify(productsOnStorage))
+    }
+
+    function addToCart(element:Items){
     }
 
     return (
         <div className={style["background-bag"]}>
             <button onClick={() => {
-                const element = list[props.id]
+                const element = productsOnStorage[props.id]
                 verifyQuantity(element)
             }
 

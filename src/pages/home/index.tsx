@@ -2,6 +2,11 @@ import React from "react"
 import style from "./index.module.scss"
 import Inventory from "../inventory";
 import Products from "./products";
+import { Header } from "../components/Header/Header";
+import { Footer } from "../components/Footer/Footer";
+import { SearchBar } from "../components/SearchBar/SearchBar";
+import { Slogan } from "../components/Slogan/Slogan";
+
 
 class Index extends React.Component {
     productsContainer = Inventory.inventory
@@ -9,39 +14,9 @@ class Index extends React.Component {
     render() {
         return (
             <>
-                <header>
-                    <div className={style["header"]}>
-                        <div className={style["header__logo"]}>
-                            <a className={style["header__logo--index"]} href="../html/index.html">
-                                <h1>Reviva Fashion</h1>
-                                <small>by RCHLO</small>
-                            </a>
-                        </div>
-                        <div>
-                            <a className={style["header__button"]} href="cart.html">Botão para carrinho de compras</a>
-                        </div>
-                    </div>
-                    <nav>
-                        <ul className={style["navbar"]}>
-                            <li> <a className={style["navbar__link"]} href="#">Página inicial</a> </li>
-                            <li> <a className={style["navbar__link"]} href="#">Moda Masculina</a> </li>
-                            <li> <a className={style["navbar__link"]} href="#"> Moda Feminina</a></li>
-                            <li> <a className={style["navbar__link"]} href="#"> Moda Infatil</a></li>
-                            <li> <a className={style["navbar__link"]} href="#">Manual de Moda</a></li>
-                        </ul>
-
-                    </nav>
-                </header>
-
+                <Header />
                 <main>
-                    <fieldset className={style["searchBar"]}>
-                        <input className={style["searchBar__input"]} id="name" name="search" placeholder="Faça sua busca aqui se já souber o que está procurando..."
-                            type="text" />
-
-                        <button className={style["searchBar__button"]} >
-                        </button>
-
-                    </fieldset>
+                    <SearchBar />
                     <p className={style["main__subtitle--first"]}>Últimos lançamentos</p>
 
                     <section className={style["grid-prod"]}>
@@ -51,19 +26,7 @@ class Index extends React.Component {
 
                     </section>
 
-                    <section className={style["slogan"]}>
-                        <div className={style["slogan--text"]}>
-                            <p className={style["normal"]}>
-                                Fique por dentro de tudo que há de novidade no mundo da moda!
-                            </p>
-                            <p className={style["justify"]}>Baixe já nosso manual de moda!</p>
-                        </div>
-
-                        <strong className={style["logo--right"]}>
-                            <p>Reviva Fashion</p>
-                            <span>by RCHLO</span>
-                        </strong>
-                    </section>
+                    <Slogan />
 
                     <p className={style["main__subtitle--second"]}>Coleção de vintage 2022</p>
                     <section className={style["grid-prod"]}>
@@ -76,69 +39,40 @@ class Index extends React.Component {
                     <p className={style["main__subtitle--third"]}>Na dúvida sobre combinar suas roupas e ficar incrível?
                     </p>
                     <p className={style["main__subtitle--fourth"]}> Confira nossas dicas em nosso blog.</p>
-                </main>
-
-                {<footer className={style["footer"]}>
-                    <strong className={style["footer__logo"]}>
-                        <p>Reviva Fashion</p>
-                        <small>by RCHLO</small>
-                    </strong>
-
-                    <div className={style["footer__infos"]}>
 
 
-                        <ul className={style["footer__infos--menu"]}>
-                            <li>Menu</li>
-                            <li>Página inicial</li>
-                            <li>Moda Masculina</li>
-                            <li>Moda Feminina</li>
-                            <li>Moda Infatil</li>
-                            <li>Manual de Moda</li>
-                        </ul>
-                        <ul className={style["footer__infos--networks"]}>
-                            <li>Siga-nos nas redes sociais</li>
-                            <div className={style["footer__icons--medias"]}>
-                                <li><img src="../images/facebook.png" alt="logo facebook" /></li>
-                                <li><img src="../images/twitter.png" alt="logo twitter" /></li>
-                                <li><img src="../images/instagram.png" alt="logo instagram" /></li>
-                                <li><img src="../images/youtube.png" alt="logo youtube" /></li>
-                            </div>
 
-                        </ul>
-                        <ul className={style["footer__infos--contact"]}>
-                            <li>Entre em contato</li>
+                    <section className={style["article"]}>
 
-                            <li>Contato</li>
-                            <li>reviva@rchlo.com.br</li>
-                            <div className={style["footer__icons"]}>
-                                <li>WhatsApp</li>
-                                <i className={style["footer__icons--whatsapp"]}></i>
-                                {/* <img src="../images/whatsapp.png" alt="logo whatsapp"/> */}
-                            </div>
-                            <div className={style["footer__icons"]}>
-                                <li>(11) 2123-3321</li>
-                                <i className={style["footer__icons--contact"]}></i>
-                                {/* <img src="../images/telephone-call.png" alt="logo telefone"/> */}
-                            </div>
-
-                        </ul>
-                        <ul className={style["footer__infos--newsletter"]}>
-                            <li>Assine nossa newsletter</li>
-                            <div className={style["footer__input"]}>
-                                <li>
-                                    <input className={style["input-newsletter"]} type="text" />
-                                </li>
-                                <li>
-                                    <button className={style["newsletter-button"]}>ASSINAR JÁ</button>
-                                </li>
-                            </div>
-
-                        </ul>
+                    <div className={style["article--left"]}>
+                        <article>
+                            <img src={process.env.PUBLIC_URL + "./images/collection-clothes-girls.jpg"} alt="Capa de coleção mulheres 2021" />
+                        </article>
+                        <p>A <strong>coleção Women 2021 </strong> traz tudo que uma mulher precisa para mostrar exuberância e
+                            trazer um ar leve aos seus looks</p>
 
                     </div>
 
-                </footer>}
+                    <div className={style["article--middle"]}>
+                        <article className={style["first-middle-article"] + " " +  style["article__middle--top"]}>
+                            <img src={process.env.PUBLIC_URL + "./images/collection-clothes-classic.jpg"} alt="Capa de coleção clássica" />
+                        </article>
+                        <article className={style["second-middle-article"] + " " + style["article__middle--bottom"]}>
+                            <img src={process.env.PUBLIC_URL + "./images/collection-clothes-street.jpg"} alt="Capa de coleção street" />
+                        </article>
 
+                    </div>
+                    <div className={style["article--right"]}>
+                        <p className={style["first-middle-text"]}>Coleção Classic 80s</p>
+                        <p className={style["second-middle-text"]}>Coleção Street 90s</p>
+                    </div>
+
+                </section>
+                </main>
+
+                
+
+                <Footer />
             </>
 
 
@@ -146,5 +80,3 @@ class Index extends React.Component {
     }
 }
 export default Index
-
-//usar search and replace 

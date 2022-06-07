@@ -1,4 +1,4 @@
-@import 'var';
+@import './var.scss';
 
 body {
     font-family: $font-family-page;
@@ -9,4 +9,8 @@ body {
 body,html{
     overflow-x:hidden ;
     scroll-behavior: smooth;
+}
+
+p{
+    font-size: calc($font-size-text*1.4);
 }
