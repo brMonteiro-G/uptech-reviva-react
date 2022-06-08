@@ -1,4 +1,4 @@
-import { Items } from "./home/products"
+import { Items } from "./components/windowShopper/Products"
 import { Sizes } from "./sizes"
 
 

@@ -1,8 +1,8 @@
 
-import style from "./index.module.scss"
-import Inventory from "../inventory"
+import style from "./Products.module.scss"
+import Inventory from "../../inventory"
 import { ReactElement } from "react"
-import { Button } from "./Button"
+import { Button } from "../Button/Button"
 //refatorar inventario 
 
 export interface Items {
@@ -68,3 +68,4 @@ export default function Products(props: props) {
 }
 
 
+ 

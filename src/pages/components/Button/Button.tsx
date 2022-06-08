@@ -1,7 +1,7 @@
 import React, { useState } from "react"
-import Inventory from "../inventory"
-import style from "./index.module.scss"
-import { Items } from "./products"
+import Inventory from "../../inventory"
+import style from "./Button.module.scss"
+import { Items } from "../windowShopper/Products"
 
 export interface Id {
     id: number
@@ -43,4 +43,4 @@ export function Button(props: Id) {
     )
 }
 
-
+ 

@@ -9,14 +9,10 @@ export function Footer(){
                          dimension="big"
                          justify="right"
                         />
-{/* 
-                    <strong className={style["footer__logo"]}>
-                        <p>Reviva Fashion</p>
-                        <small>by RCHLO</small>
-                    </strong> */}
+
 
                     <div className={style["footer__infos"]}>
-
+ 
 
                         <ul className={style["footer__infos--menu"]}>
                             <li>Menu</li>

@@ -12,12 +12,6 @@ export function Header(){
             justify='left'
             />
 
-            {/* <div className={style["header__logo"]}>
-                <a className={style["header__logo--index"]} href="../html/index.html">
-                    <h1>Reviva Fashion</h1>
-                    <small>by RCHLO</small>
-                </a>
-            </div> */}
             <div>
                 <a className={style["header__button"]} href="cart.html">Botão para carrinho de compras</a>
             </div>
@@ -26,4 +20,4 @@ export function Header(){
         <Navbar/>
     </header>
     )
-}
+} 

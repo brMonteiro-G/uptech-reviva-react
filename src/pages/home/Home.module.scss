@@ -1,0 +1,129 @@
+@import '../assets/var.scss';
+@import '../assets/base.scss';
+@import '../components/Slogan/Slogan.module.scss';
+@import  '../components/Header/Header.module.scss';
+@import '../components/Navbar/Navbar.module.scss';
+@import '../components/SearchBar/SearchBar.module.scss';
+@import '../components/Footer/Footer.module.scss';
+
+%section-image{
+    background-position: 50% 45% !important;
+    background-size: contain !important;
+    height: 180px;
+    margin-bottom: 20px;
+    border-radius: 1%;
+    height: 18em;
+    width: 38em;
+}
+
+.main{
+    padding: 1%;
+}
+
+.main__subtitle {
+    &--first,
+    &--second {
+        margin-bottom: 2em;
+        font-size: 2em;
+        font-weight: 600;
+    }
+
+    &--third,
+    &--fourth {
+        font-size: 2em;
+        font-weight: 600;
+        margin-top: 2em;
+    }
+    &--third{
+        margin-bottom: 0;
+    }
+
+    &--fourth {
+        margin-top: 0;
+    }
+}
+
+.article {
+    display: grid;
+    grid-template-columns: 1fr 0.5fr;
+    column-gap: 30px;
+    margin-bottom: 3em;
+    padding: 1%;
+    p {
+        margin: 20px 0px 20px 0px;
+        width: 96%;
+    }
+
+    &--left {
+        
+
+        img {
+            height: 20em;
+            width: 48%;
+
+        }
+        img:hover{
+            cursor: pointer;
+        }
+
+    }
+
+    &--right {
+        display: flex;
+        flex-direction: column;
+        align-items: center;
+        justify-content: space-around;
+
+        p::nth-child(1) {
+            margin-top: 0;
+            margin-bottom: 130px;
+        }
+
+    }
+}
+
+.article__middle--top {
+    display: flex;
+    align-items: center;
+
+    img {
+        margin-bottom: 20px;
+        height: 16em;
+        width: 38em;
+        @extend %section-image;
+    }
+    img:hover{
+        cursor: pointer;
+    }
+
+}
+
+.article__middle--bottom {
+    display: flex;
+    align-items: center;
+
+   
+    img {
+       
+        @extend %section-image;
+    }
+    img:hover{
+        cursor: pointer;
+    }
+
+}
+
+.middle--text{
+    text-align: center
+}
+
+.article--left{
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    text-align: center
+}
+
+@import './ResponsiveHome.module.scss';
+ 

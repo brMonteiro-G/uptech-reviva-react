@@ -48,16 +48,6 @@
     }
 }
 
-@media(max-width:760px) {
-    .navbar {
-        display: flex;
-        flex-direction: column;
-    }
-
-    .navbar li {
-        padding: 1%;
-    }
-}
 
 @media screen and (max-width:554px) {
     .searchBar {
@@ -70,37 +60,7 @@
         }
     }
 
-    .footer__input{
+    .footer__input {
         flex-direction: column;
-    }
-}
-
-@media(max-width: 510px) {
-
-   
-}
-
-@media(max-width:1558px) {
-    .grid-prod {
-        grid-template-columns: repeat(3, 1fr);
-
-    }
-
-    .footer__icons {
-        flex-direction: column;
-    }
-}
-
-@media(max-width:1132px) {
-    .grid-prod {
-        grid-template-columns: repeat(2, 1fr);
-
-    }
-}
-
-@media(max-width:718px) {
-    .grid-prod {
-        grid-template-columns: 0.5fr;
-
     }
 }

@@ -33,7 +33,7 @@ export function Logo(props: PropsLogo) {
             <p>Reviva Fashion</p>
             <span>by RCHLO</span>
         </strong>
-    )
+    ) 
 
   
 

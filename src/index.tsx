@@ -1,6 +1,8 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import Index from './pages/home';
+import { Footer } from './pages/components/Footer/Footer';
+import { Header } from './pages/components/Header/Header';
+import Home from './pages/home/Home';
 
 
 const root = ReactDOM.createRoot(
@@ -8,6 +10,9 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Index/>
+    <Header />
+    <Home />
+    <Footer />
+
   </React.StrictMode>
 );
