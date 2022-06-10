@@ -1,0 +1,91 @@
+@import '../../../../styles/var.scss';
+
+
+@mixin button-size($size) {
+    @if $size ==p {
+        @extend %radio-config;
+        background:  url(process.env.PUBLIC_URL/images/p.png) no-repeat center;
+        background-size: contain;    
+    }
+
+    @if $size==m {
+        @extend %radio-config;
+        background:  url(process.env.PUBLIC_URL/images/p.png) no-repeat center;
+        background-size: contain;         
+    }
+
+    @if $size==g {
+        @extend %radio-config;
+        background:  url(process.env.PUBLIC_URL/images/p.png) no-repeat center;
+        background-size: contain;  
+    }
+}
+
+%radio-config {
+    content: '';
+    width: 22px;
+    height: 22px;
+    border-radius: 4px;
+    display: inline-block;
+    vertical-align: middle;
+    margin-bottom: 3px;
+}
+
+
+.details__button--size{
+    
+    & label{
+        color: transparent;
+        font-size: 0.1px;
+    }
+    & input{
+        display: none;
+    }
+
+}
+
+//tentar refatorar @each?
+
+.details__button--size--p input+label:before {
+    border: none;
+    cursor: pointer;
+    border: 2px solid $tertiary-color ;
+    @include button-size(p);
+}
+
+.details__button--size--p input:checked+label:before {
+    background-color: rgba( $tertiary-color,  0.5);
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+
+
+.details__button--size--m input+label:before {
+    border: none;
+    cursor: pointer;
+    border: 2px solid $tertiary-color ;
+    @include button-size(m);
+}
+
+.details__button--size--m input:checked+label:before {
+    background-color: rgba( $tertiary-color,  0.5);
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+
+
+
+.details__button--size--g input+label:before {
+    border: none;
+    cursor: pointer;
+    border: 2px solid $tertiary-color ;
+    @include button-size(g);
+}
+
+.details__button--size--g input:checked+label:before {
+    background-color: rgba( $tertiary-color,  0.5);
+    transform: scale(1.1);
+    transition: all 0.5s;
+}
+

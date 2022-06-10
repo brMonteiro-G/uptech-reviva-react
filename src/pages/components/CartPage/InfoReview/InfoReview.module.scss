@@ -1,0 +1,19 @@
+.review__info {
+   display: grid;
+   grid-template-columns: 3fr;
+   row-gap: 2em;
+   grid-template-rows: 1fr auto;
+   width: max-content;
+ 
+}
+
+.review__info--title{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.review__info--item{
+    display: flex;
+    flex-direction: row;
+}
