@@ -5,8 +5,9 @@ import { cartState } from "../atoms/cartState"
 export const useAddCart = () => {
     const setCartState = useSetRecoilState<Items[]>(cartState)
     return (newItem: Items) => {
-        return setCartState(elementsOnCart => {
-            return [...elementsOnCart, newItem]
+        return setCartState(elementsInCart => {
+            localStorage.setItem("Cart", JSON.stringify(elementsInCart))
+            return [...elementsInCart, newItem]
         })
     }
-}
+} 

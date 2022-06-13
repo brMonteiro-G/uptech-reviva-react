@@ -4,6 +4,6 @@ import Inventory from "../../inventory";
 
 export const storageState = atom<Items[]>({
     key: 'storageState',
-    default: Inventory.inventory
+    default:Inventory.available_products_in_inventory
     
 })

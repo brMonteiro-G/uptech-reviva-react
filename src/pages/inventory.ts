@@ -4,7 +4,7 @@ import { Sizes } from "./sizes"
 
 export default class Inventory {
 
-    public static inventory: Array<Items> = [
+    public static available_products_in_inventory: Array<Items> = [
 
         {
             name: 'Blusa feminina Kaienne',
@@ -101,7 +101,7 @@ export default class Inventory {
 
     //localStorageItem: string = localStorage.getItem("itens")!
    public static localStorageItem(): void {
-        localStorage.setItem("Items", JSON.stringify(Inventory.inventory))
+        localStorage.setItem("Items", JSON.stringify(Inventory.available_products_in_inventory))
     } 
 
 

@@ -1,8 +1,10 @@
 
 import style from "./Products.module.scss"
 import Inventory from "../../inventory"
-import { ReactElement } from "react"
+import { ReactElement, useState } from "react"
 import { Button } from "../Button/Button"
+import { storageState } from "../../state/atoms/storageState"
+import { useRecoilValue } from "recoil"
 //refatorar inventario 
 
 export interface Items {
@@ -22,9 +24,9 @@ export interface Props {
     texto: string
 }
 
-let productsList: Array<Items> = Inventory.inventory
-
 export default function Products(props: Props) {
+
+const productsContainer = useRecoilValue(storageState)
 
     function template(element: Items, index: number): ReactElement {
         return (
@@ -49,7 +51,7 @@ export default function Products(props: Props) {
     return (
         <>
             {
-                productsList.map((element, index) => {
+               productsContainer.map((element, index) => {
                     if (props.texto.includes("1")) {
                         if (index <= 3) {
                             return (template(element, index))

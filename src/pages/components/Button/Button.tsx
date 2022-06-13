@@ -1,7 +1,10 @@
-import React, { useState } from "react"
-import Inventory from "../../inventory"
+import { useState } from "react"
 import style from "./Button.module.scss"
 import { Items } from "../windowShopper/Products"
+import { storageState } from "../../state/atoms/storageState"
+import { useAddCart } from "../../state/hooks/useAddCart"
+import { useRecoilValue } from "recoil"
+import { cartState } from "../../state/atoms/cartState"
 
 export interface Id {
     id: number
@@ -9,32 +12,50 @@ export interface Id {
 
 export function Button(props: Id) {
 
-    const [productsOnStorage, setProductsOnStorage] = useState(Inventory.inventory)
-    const [productsOnCart, setProductsOnCart] = useState([])
+    const productsInStorage = useRecoilValue(storageState)
+    const addProductInCart = useAddCart()
+    const teste = useRecoilValue(cartState)
 
     function verifyQuantity(element: Items): void {
         if (element.available_amount - 1 < 0) {
             return alert("Produto esgotado")
 
         }
-        element.available_amount = element.available_amount - 1
-        UpdateStorage()
+
+        const updateProduct ={
+            ...element
+        }
+
+        updateProduct.available_amount = updateProduct.available_amount - 1
+        UpdateStorage(updateProduct)
+        addProductInCart(updateProduct)
+        console.log(productsInStorage);
+       
+        console.log(teste)
+        
+        
         alert("Produto adicionado ao carrinho")
     }
 
-    function UpdateStorage() {
-        setProductsOnStorage([...productsOnStorage])
-        localStorage.setItem("Items", JSON.stringify(productsOnStorage))
-    }
+    function UpdateStorage(updateProduct:Items) {
 
-    function addToCart(element:Items){
+        // const productsOnStorageArray = Object.values(productsOnStorage)
+        // productsOnStorageArray.push([productsOnStorage])
+
+        //setProductsOnStorage(previousStorage =>{
+        //  const previousStorag = Object.values(previousStorage)
+        //   return previousStorag.push(previousStorage)
+        //   })
+       
     }
 
     return (
         <div className={style["background-bag"]}>
             <button onClick={() => {
-                const element = productsOnStorage[props.id]
+                const element = productsInStorage[props.id]                
                 verifyQuantity(element)
+
+
             }
 
             } className={style["desc-button"]}> POR NA SACOLA</button>
@@ -43,4 +64,4 @@ export function Button(props: Id) {
     )
 }
 
- 
+
