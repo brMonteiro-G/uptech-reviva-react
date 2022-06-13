@@ -1,0 +1,58 @@
+@import '../../assets/var';
+@import '../../assets/base';
+
+
+%expand {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-end;
+    height: auto;
+    padding: 1%;
+
+    p,
+    h1 {
+        font-size: $font-size-title;
+        font-weight: $font-weight-title;
+        margin: auto 0 auto 0;
+    }
+
+    small {
+        font-size: $font-size-text;
+        font-weight: $font-weight-text;
+        padding-bottom: 1em;
+    }
+}
+
+
+
+.header {
+    display: flex;
+    justify-content: space-between;
+    background-color: $quaternary-color;
+    align-items: center;
+    box-sizing: border-box;
+    padding: 2%;
+
+}
+
+.header__button {
+    background-image: url('../../../../public/images/shopping-bag\ \(1\).png');
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: auto;
+    color: transparent;
+    width: 32px;
+    height: 32px;
+    display: block;
+
+    &:hover {
+        border: solid 1px #ffffff;
+        border-radius: 100%;
+        box-shadow: 1px 1px 1px 1px rgba(0, 0, 0, 0.25);
+        transition: 1s all;
+        transform: scale(1.2);
+    }
+
+}
+
+@import './Header.responsive.scss'; 

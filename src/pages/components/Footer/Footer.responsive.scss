@@ -1,0 +1,66 @@
+@media(max-width: 1180px) {
+
+
+    .footer__infos {
+        display: grid;
+        grid-template-columns: repeat(2, 50%);
+        grid-template-areas: "menu contact"
+            "networks newsletter";
+    }
+}
+
+
+@media(max-width: 1010px) {
+    .footer__infos {
+        display: grid;
+        grid-template-columns: 1fr;
+        grid-template-areas: "menu"
+            "contact"
+            "networks"
+            "newsletter";
+    }
+
+    .newsletter,
+    .contact,
+    .networks,
+    .menu {
+        justify-self: center;
+    }
+
+    .footer__infos {
+        text-align: center;
+
+        &--input {
+            justify-content: center;
+        }
+
+    }
+
+    .footer__icons--contact {
+
+        justify-content: center;
+
+    }
+
+    .footer__input {
+        justify-content: center;
+
+    }
+}
+
+
+@media screen and (max-width:554px) {
+    .searchBar {
+        display: block;
+        text-align: center;
+
+        &__button {
+            width: 50%;
+
+        }
+    }
+
+    .footer__input {
+        flex-direction: column;
+    }
+}
