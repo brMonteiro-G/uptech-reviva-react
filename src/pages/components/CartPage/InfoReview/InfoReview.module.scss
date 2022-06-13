@@ -1,9 +1,9 @@
 .review__info {
    display: grid;
    grid-template-columns: 3fr;
-   row-gap: 2em;
+   row-gap: 9em;
    grid-template-rows: 1fr auto;
-   width: max-content;
+   padding: 0 1%;
  
 }
 
@@ -16,4 +16,5 @@
 .review__info--item{
     display: flex;
     flex-direction: row;
+    justify-content: space-around;
 }

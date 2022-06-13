@@ -1,5 +1,15 @@
 @import '../../../styles/base.scss';
+
 .review {
     display: flex;
-    justify-content: space-between  ;
+    justify-content: space-between;
+    padding: 1%;
+}
+
+.infoReview{
+    width: 100%;
+}
+.paymentReview{
+    width: 20%;
+
 }

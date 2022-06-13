@@ -11,10 +11,10 @@ export function ProductReview() {
                 <ImageProductReview />
             </div>
 
-            <div>
+            <div className={style.infoReview}>
                 <InfoReview />
             </div>
-            <div>
+            <div className={style.paymentReview}>
                 <BillingReview />
             </div>
 

@@ -2,7 +2,11 @@ import { atom } from "recoil";
 import { Items } from "../../components/windowShopper/Products";
 import { Sizes } from "../../sizes";
 
-export const cartState = atom<Items[]>({ //mockado para testes
+interface cartProducts extends Items{
+    units_in_cart: number
+}
+
+export const cartState = atom<cartProducts[]>({ //mockado para testes
     key:'cartState',
     default:[
         {
@@ -12,6 +16,7 @@ export const cartState = atom<Items[]>({ //mockado para testes
             description: 'A Camiseta Lipp é linda para ser usada em qualquer lugar',
             available_size: [Sizes.SMALL, Sizes.MEDIUM, Sizes.LARGE],
             available_amount: 12,
+            units_in_cart:2,
             images: [
                 { url: "/images/image-model-printed-tShirt.webp", description: 'camiseta lipp no tamanho p' }
             ],
@@ -23,6 +28,7 @@ export const cartState = atom<Items[]>({ //mockado para testes
             description: 'A Camiseta Lipp é linda para ser usada em qualquer lugar',
             available_size: [Sizes.SMALL, Sizes.MEDIUM, Sizes.LARGE],
             available_amount: 12,
+            units_in_cart:4,
             images: [
                 { url: "/images/image-model-striped-tShirt.webp", description: 'camiseta lipp no tamanho p' }
             ],

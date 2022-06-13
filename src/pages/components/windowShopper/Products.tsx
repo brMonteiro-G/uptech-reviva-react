@@ -18,31 +18,33 @@ export interface Images {
     url: string,
     description: string
 }
-export interface props {
+export interface Props {
     texto: string
 }
 
 let productsList: Array<Items> = Inventory.inventory
 
-export default function Products(props: props) {
+export default function Products(props: Props) {
 
     function template(element: Items, index: number): ReactElement {
-        return (<div className={`${style.boxModel}`} data-id={index}>
+        return (
+            <div className={`${style.boxModel}`} data-id={index}>
 
-            <a href="#">
-                <div className={style["div-image-buttons"]}>
-                    <img className={style["img-prod"]} src={process.env.PUBLIC_URL + element.images[0].url} alt={element.images[0].description} />
+                <a href="#">
+                    <div className={style["div-image-buttons"]}>
+                        <img className={style["img-prod"]} src={process.env.PUBLIC_URL + element.images[0].url} alt={element.images[0].description} />
+                    </div>
+                </a>
+                <div className={`${style.product__view}`}>
+                    <p className={style["product__view--name"]}>{element.name} </p>
+                    <p className={style["product__view--price"]}>R$ {element.price.toFixed(2)} </p>
                 </div>
-            </a>
-            <div className={`${style.product__view}`}>
-            <p className={style["product__view--name"]}>{element.name} </p>
-            <p className={style["product__view--price"]}>R$ {element.price.toFixed(2)} </p>
+
+                <Button
+                    id={index} />
+
             </div>
-
-            <Button
-                id={index} />
-
-        </div>)
+        )
     }
     return (
         <>
@@ -68,4 +70,3 @@ export default function Products(props: props) {
 }
 
 
- 

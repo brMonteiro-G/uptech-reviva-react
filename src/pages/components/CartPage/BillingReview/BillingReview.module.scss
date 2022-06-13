@@ -1,0 +1,28 @@
+@import '../../../styles/var.scss';
+
+
+.review__payment{
+width: 100%;
+    button {
+        display: block;
+        margin: auto;
+        margin-top: 159%;
+        border: none;
+        height: 3em;
+        background-color: $tertiary-color;
+
+    }
+
+    button:hover {
+        color: white;
+        cursor: pointer;
+    }
+}
+.review__payment--config{
+    height: 100%;
+   // display: contents;
+    padding: 11%;
+    padding-top: 0;
+    font-weight: $font-weight-text;
+    background-color: $tertiary-color;
+}

@@ -4,20 +4,20 @@
 @mixin button-size($size) {
     @if $size ==p {
         @extend %radio-config;
-        background:  url(process.env.PUBLIC_URL/images/p.png) no-repeat center;
-        background-size: contain;    
+        background: url('../../../../../../public/images/p.png') no-repeat center;
+        background-size: contain;
     }
 
     @if $size==m {
         @extend %radio-config;
-        background:  url(process.env.PUBLIC_URL/images/p.png) no-repeat center;
-        background-size: contain;         
+        background: url('../../../../../../public/images/m.png') no-repeat center;
+        background-size: contain;
     }
 
     @if $size==g {
         @extend %radio-config;
-        background:  url(process.env.PUBLIC_URL/images/p.png) no-repeat center;
-        background-size: contain;  
+        background: url('../../../../../../public/images/m\ \(1\).png') no-repeat center;
+        background-size: contain;
     }
 }
 
@@ -32,13 +32,21 @@
 }
 
 
-.details__button--size{
-    
-    & label{
+.details__button--size {
+    width: 8%;
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    position: relative;
+    right: 2.8em;
+    border: none;
+
+    & label {
         color: transparent;
         font-size: 0.1px;
     }
-    & input{
+
+    & input {
         display: none;
     }
 
@@ -54,7 +62,7 @@
 }
 
 .details__button--size--p input:checked+label:before {
-    background-color: rgba( $tertiary-color,  0.5);
+    background-color: rgba($tertiary-color, 0.5);
     transform: scale(1.1);
     transition: all 0.5s;
 }
@@ -69,7 +77,7 @@
 }
 
 .details__button--size--m input:checked+label:before {
-    background-color: rgba( $tertiary-color,  0.5);
+    background-color: rgba($tertiary-color, 0.5);
     transform: scale(1.1);
     transition: all 0.5s;
 }
@@ -84,8 +92,37 @@
 }
 
 .details__button--size--g input:checked+label:before {
-    background-color: rgba( $tertiary-color,  0.5);
+    background-color: rgba($tertiary-color, 0.5);
     transform: scale(1.1);
     transition: all 0.5s;
 }
 
+.review__select {
+    width: 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    position: relative;
+    right: 3.2em;
+
+    input {
+        width: 25px;
+    }
+
+    button {
+        background-color: $tertiary-color;
+        border-radius: 4px;
+        border: none;
+        width: 20px;
+    }
+
+    button:hover {
+        color: white;
+        cursor: pointer;
+
+    }
+}
+
+.review__price{
+    width: 10%;
+}
