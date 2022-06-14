@@ -14,11 +14,11 @@ export const useAddCart = () => {
 
             if (typeof checkCart !== 'undefined') {
                 const index = elementsInCart.indexOf(checkCart)
-                return [...elementsInCart.slice(0, index), updateValues(checkCart), ...elementsInCart.slice(index + 1)]
+                return [...elementsInCart.slice(0, index), updateValues(checkCart,"increase"), ...elementsInCart.slice(index + 1)]
             }
 
 
-            return [...elementsInCart, updateValues(newItem)]
+            return [...elementsInCart, updateValues(newItem, "increase")]
         })
     }
 } 

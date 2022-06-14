@@ -14,14 +14,7 @@ export default function Home() {
     const productsInStorage = useRecoilValue(storageState)    
     localStorage.setItem("Items", JSON.stringify(productsInStorage))
     const teste = useRecoilValue(cartState)
-    console.log("aqui está o cart state depois de passar pelo setstate");
-    console.log(teste);
-    
-    
-    console.log("aqui está o storage state depois de passar pelo setStorage");
-    console.log(productsInStorage);
-    
-    
+
 
 
     return (

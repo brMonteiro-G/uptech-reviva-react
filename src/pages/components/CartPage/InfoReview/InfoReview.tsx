@@ -1,12 +1,15 @@
-import { useRecoilValue } from 'recoil'
-import { cartState } from '../../../state/atoms/cartState'
+
 import style from './InfoReview.module.scss'
 import { ReviewItem } from './ReviewItem/ReviewItem'
 import { ReviewTitle } from './ReviewTitle/ReviewTitle'
 
 export function InfoReview() {
 
-    const productsOnCart = useRecoilValue(cartState)
+    //const productsInCart = useRecoilValue(cartState)
+    const getItem = JSON.parse(localStorage.getItem("Cart"))
+    const productsInCart = [...getItem]
+    
+
     //console.log(productsOnCart)
     return (
         <div className={`${style.review__info}`}>
@@ -16,12 +19,13 @@ export function InfoReview() {
 
                 </div>
                  {
-                 productsOnCart.map((_,productCartindex) => { 
+                 productsInCart.map((_,productCartindex) => { 
                     return(
                     <div className={style["review__info--item"]}>
                         <ReviewItem
                             //melhorar esse codigo 
-                            item = {productsOnCart.find((_, indice) => indice === productCartindex )}
+
+                            item = {productsInCart.find((_, indice) => indice === productCartindex )}
                         />
                     </div>
 

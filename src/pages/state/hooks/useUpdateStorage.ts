@@ -12,7 +12,7 @@ export const useUpdateStorage = () => {
         
         return setStorage((beforeStateStorage) => {
             const index = beforeStateStorage.findIndex(product=> product.id === item.id)
-            return [...beforeStateStorage.slice(0, index), updateValues(item as CartProducts), ...beforeStateStorage.slice(index + 1)]
+            return [...beforeStateStorage.slice(0, index), updateValues(item as CartProducts, "increase"), ...beforeStateStorage.slice(index + 1)]
         })
     }
 

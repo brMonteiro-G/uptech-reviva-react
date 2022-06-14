@@ -15,8 +15,8 @@ root.render(
   <React.StrictMode>
     <Header />
     <RecoilRoot>
-       <Home />
-    {/* <Cart/> */}
+       {/* <Home /> */}
+    <Cart/>
     </RecoilRoot>
    
     <Footer />

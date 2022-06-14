@@ -1,17 +1,32 @@
 import style from './BillingReview.module.scss'
 
 export function BillingReview() {
+
+    const getCart = JSON.parse(localStorage.getItem("Cart"))
+    const cart = [...getCart]
+    const total = cart.reduce((acc, currentValue) => (acc += currentValue.price),0)
+
     return (
 
 
         <div className={style.review__payment}>
             <div className={style["review__payment--config"]}>
-                <p>Total     R$129,90</p>
-                <p>2x64,50 = R$140,00</p>
-                <p>2x56,50 = R$150,00</p>
+                {cart.map((productsInCart) => {
+                    return (
+                        <>
+                            <p>2x{(productsInCart.price + productsInCart.price * 0.1).toFixed(2)} = R$ {productsInCart.price.toFixed(2)}</p>
+
+                        </>
+                    )
+                })}
+
+
+                <p>Total: R${total.toFixed(2)}</p>
+
+
                 <button>Ir para pagamento</button>
             </div>
-            
+
 
         </div>
     )
