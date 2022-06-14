@@ -4,61 +4,51 @@ import { Items } from "../windowShopper/Products"
 import { storageState } from "../../state/atoms/storageState"
 import { useAddCart } from "../../state/hooks/useAddCart"
 import { useRecoilValue } from "recoil"
-import { cartState } from "../../state/atoms/cartState"
+import { CartProducts, cartState } from "../../state/atoms/cartState"
+import { useUpdateStorage } from "../../state/hooks/useUpdateStorage"
 
 export interface Id {
-    id: number
+    id: string
 }
 
 export function Button(props: Id) {
 
-    const productsInStorage = useRecoilValue(storageState)
+    const updateStorage = useUpdateStorage()
     const addProductInCart = useAddCart()
-    const teste = useRecoilValue(cartState)
+    const storage = useRecoilValue(storageState)
 
     function verifyQuantity(element: Items): void {
+        console.log("quero ver quando chegar em zero ");
+
+        console.log(element.available_amount);
+
         if (element.available_amount - 1 < 0) {
             return alert("Produto esgotado")
+            throw new Error("O Produto está esgotado no estoque")
 
         }
-
-        const updateProduct ={
-            ...element
+        const updateProduct: CartProducts = {
+            ...element,
+            units_in_cart: 0
         }
 
-        updateProduct.available_amount = updateProduct.available_amount - 1
-        UpdateStorage(updateProduct)
         addProductInCart(updateProduct)
-        console.log(productsInStorage);
-       
-        console.log(teste)
-        
-        
+        updateStorage(updateProduct)
         alert("Produto adicionado ao carrinho")
     }
-
-    function UpdateStorage(updateProduct:Items) {
-
-        // const productsOnStorageArray = Object.values(productsOnStorage)
-        // productsOnStorageArray.push([productsOnStorage])
-
-        //setProductsOnStorage(previousStorage =>{
-        //  const previousStorag = Object.values(previousStorage)
-        //   return previousStorag.push(previousStorage)
-        //   })
-       
-    }
-
     return (
         <div className={style["background-bag"]}>
             <button onClick={() => {
-                const element = productsInStorage[props.id]                
-                verifyQuantity(element)
 
+                const element = storage.find((item) => {
+                    return item.id === props.id
+                })
+
+                verifyQuantity(element)
 
             }
 
-            } className={style["desc-button"]}> POR NA SACOLA</button>
+            } className={style["desc-button"]}>POR NA SACOLA</button>
             <button id="cart-button" className={style["shopping-cart"]} disabled></button>
         </div>
     )

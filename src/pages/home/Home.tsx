@@ -6,13 +6,24 @@ import { Slogan } from "../components/Slogan/Slogan";
 import { Posts } from "../components/Posts/Posts";
 import { useRecoilValue } from "recoil";
 import { storageState } from "../state/atoms/storageState";
+import { cartState } from "../state/atoms/cartState";
 
 
 
 export default function Home() {
-    const productsInStorage = useRecoilValue(storageState)
+    const productsInStorage = useRecoilValue(storageState)    
     localStorage.setItem("Items", JSON.stringify(productsInStorage))
+    const teste = useRecoilValue(cartState)
+    console.log("aqui está o cart state depois de passar pelo setstate");
+    console.log(teste);
     
+    
+    console.log("aqui está o storage state depois de passar pelo setStorage");
+    console.log(productsInStorage);
+    
+    
+
+
     return (
         <>
             <main className={style["main"]}>
@@ -44,7 +55,7 @@ export default function Home() {
 
                 <section className={style["article"]}>
 
-                <Posts/>
+                    <Posts />
 
 
                 </section>

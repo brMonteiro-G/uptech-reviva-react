@@ -9,6 +9,7 @@ import { useRecoilValue } from "recoil"
 
 export interface Items {
     name: string
+    id:string
     url: string,
     price: number,
     description: string,
@@ -28,6 +29,8 @@ export default function Products(props: Props) {
 
 const productsContainer = useRecoilValue(storageState)
 
+
+
     function template(element: Items, index: number): ReactElement {
         return (
             <div className={`${style.boxModel}`} data-id={index}>
@@ -43,7 +46,8 @@ const productsContainer = useRecoilValue(storageState)
                 </div>
 
                 <Button
-                    id={index} />
+                
+                    id={element.id} />
 
             </div>
         )
@@ -52,7 +56,9 @@ const productsContainer = useRecoilValue(storageState)
         <>
             {
                productsContainer.map((element, index) => {
+                
                     if (props.texto.includes("1")) {
+                        
                         if (index <= 3) {
                             return (template(element, index))
                         }

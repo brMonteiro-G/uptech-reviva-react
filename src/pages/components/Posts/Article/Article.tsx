@@ -25,7 +25,7 @@ export function Article(props: ArticleProps) {
     return (
         <>
             
-              <img src={process.env.PUBLIC_URL + props.url_image} alt={props.description} />
+              <img key={props.title} src={process.env.PUBLIC_URL + props.url_image} alt={props.description} />
               <p>{props.title}</p>
                     
 
