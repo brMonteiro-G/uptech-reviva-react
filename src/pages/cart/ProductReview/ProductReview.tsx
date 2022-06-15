@@ -7,12 +7,12 @@ export function ProductReview() {
   return (
 
     <section className={`${style.review}`}>
-      <div>
-        <ImageProductReview />
-      </div>
+
 
       <div className={style.infoReview}>
-        <InfoReview />
+        <div>
+          <InfoReview />
+        </div>
       </div>
       <div className={style.paymentReview}>
         <BillingReview />

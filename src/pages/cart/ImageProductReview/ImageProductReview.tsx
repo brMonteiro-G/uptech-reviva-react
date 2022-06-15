@@ -1,10 +1,11 @@
 
+import { cartState } from 'pages/state/atoms/cartState';
+import { useRecoilValue } from 'recoil';
 import style from './ImageProductReview.module.scss';
 
 export function ImageProductReview() {
 
-  //  const getImages = useRecoilValue<Items[]>(cartState)
-  const getImages = JSON.parse(localStorage.getItem('Cart'));
+  const getImages = useRecoilValue(cartState);
   const images = [...getImages];
 
   return (

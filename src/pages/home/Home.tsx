@@ -1,6 +1,5 @@
 import style from './Home.module.scss';
 import productsStyle from '../components/windowShopper/Products.module.scss';
-import { SearchBar } from '../components/SearchBar/SearchBar';
 import { Banner } from './Banner/Banner';
 import { Posts } from './Posts/Posts';
 import { useRecoilValue } from 'recoil';
@@ -12,8 +11,6 @@ import Products from '../components/windowShopper/Products';
 export default function Home() {
   const productsInStorage = useRecoilValue(storageState);    
   localStorage.setItem('Items', JSON.stringify(productsInStorage));
-
-
 
   return (
     <>

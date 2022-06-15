@@ -4,6 +4,7 @@ import { Header } from './components/Header/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { Cart } from './cart/CartIndex';
 import Home from './home/Home';
+import { Details } from './details/Details';
 
 export default function AppRouter() {
   return (
@@ -12,8 +13,10 @@ export default function AppRouter() {
       <SearchBar />
       <Routes>
 
-        <Route path='/' element={<Home />} />
+        <Route path={'/' | 'home'} element={<Home />} />
         <Route path='/cart' element={<Cart />} />
+        <Route path='/details' element={<Details/>} />
+
       </Routes>
       <Footer />
 

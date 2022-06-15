@@ -1,8 +1,10 @@
-import style from "./BillingReview.module.scss";
+import { cartState } from 'pages/state/atoms/cartState';
+import { useRecoilValue } from 'recoil';
+import style from './BillingReview.module.scss';
 
 export function BillingReview() {
 
-  const getCart = JSON.parse(localStorage.getItem("Cart"));
+  const getCart = useRecoilValue(cartState);
   const cart = [...getCart];
   const total = cart.reduce((acc, currentValue) => (acc += currentValue.price),0);
 
@@ -10,7 +12,7 @@ export function BillingReview() {
 
 
     <div className={style.review__payment}>
-      <div className={style["review__payment--config"]}>
+      <div className={style['review__payment--config']}>
         {cart.map((productsInCart) => {
           return (
             <>
@@ -19,11 +21,7 @@ export function BillingReview() {
             </>
           );
         })}
-
-
         <p>Total: R${total.toFixed(2)}</p>
-
-
         <button>Ir para pagamento</button>
       </div>
 

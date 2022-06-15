@@ -1,40 +1,37 @@
-import { useState } from "react";
-import style from "./Logo.module.scss";
+import { Link } from 'react-router-dom';
+import style from './Logo.module.scss';
 
 interface PropsLogo {
-    dimension: string
-    justify: string
+  dimension: string
+  justify: string
 }
 
 export function Logo(props: PropsLogo) {
+  const route = {
+    label:'home',
+    to:'/'
+  };
 
-  // const [state, setState] = useState(0)
-  if (props.dimension === "big" && props.justify === "left") {
+  if (props.dimension === 'big') {
     return (
-      <div className={style["header__logo"]}>
-        <a className={style["header__logo--index"]} href="../html/index.html">
+      <div className={style['header__logo']}>
+        <Link to={route.to} className={style['header__logo--index']} >
+          {props.dimension === 'big' ? <h1>Reviva Fashion</h1> : <p>Reviva Fashion</p>}
           <h1>Reviva Fashion</h1>
           <small>by RCHLO</small>
-        </a>
+        </Link>
       </div>
     );
-  }
-  if (props.dimension === "big" && props.justify === "right") {
+  } else {
     return (
-      <strong className={style["footer__logo"]}>
+      <strong className={style['logo--right']}>
         <p>Reviva Fashion</p>
-        <small>by RCHLO</small>
+        <span>by RCHLO</span>
       </strong>
     );
   }
-   
-  return (
-    <strong className={style["logo--right"]}>
-      <p>Reviva Fashion</p>
-      <span>by RCHLO</span>
-    </strong>
-  ); 
 
-  
+
+
 
 }
