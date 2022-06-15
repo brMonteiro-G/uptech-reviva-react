@@ -1,11 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
 import { RecoilRoot } from 'recoil';
-import { Cart } from './pages/cart';
-import { Footer } from './pages/components/Footer/Footer';
-import { Header } from './pages/components/Header/Header';
-import Home from './pages/home/Home';
-// import Home from './pages/home/Home';
+import Router from '../src/pages/routes';
 
 
 const root = ReactDOM.createRoot(
@@ -13,13 +9,8 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <Header />
     <RecoilRoot>
-       {/* <Home /> */}
-    <Cart/>
+      <Router/>
     </RecoilRoot>
-   
-    <Footer />
-
   </React.StrictMode>
 );

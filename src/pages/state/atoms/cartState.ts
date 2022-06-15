@@ -1,5 +1,5 @@
-import { atom } from "recoil";
-import { Items } from "../../components/windowShopper/Products";
+import { atom } from 'recoil';
+import { Items } from '../../components/windowShopper/Products';
 
 
 export interface CartProducts extends Items{
@@ -7,6 +7,6 @@ export interface CartProducts extends Items{
 }
 
 export const cartState = atom<CartProducts[]>({ 
-    key:'cartState',
-     default:[]
-})
+  key:'cartState',
+  default:[]
+});
