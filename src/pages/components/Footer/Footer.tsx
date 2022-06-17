@@ -1,9 +1,16 @@
+import { iconsState } from 'pages/state/atoms/iconsState';
+import { linksState } from 'pages/state/atoms/linksState';
+import { useRecoilValue } from 'recoil';
 import { Logo } from '../Logo/Logo';
 import style from './Footer.module.scss';
 
 
-export function Footer(){
-  return(
+export function Footer() {
+
+  const pageLinks = useRecoilValue(linksState);
+  const icons = useRecoilValue(iconsState);
+
+  return (
     <footer className={style['footer']}>
       <Logo
         dimension="big"
@@ -12,23 +19,27 @@ export function Footer(){
 
 
       <div className={style['footer__infos']}>
- 
+
 
         <ul className={style['footer__infos--menu']}>
-          <li>Menu</li>
-          <li>Página inicial</li>
-          <li>Moda Masculina</li>
-          <li>Moda Feminina</li>
-          <li>Moda Infatil</li>
-          <li>Manual de Moda</li>
+          {pageLinks.map((links, index) => {
+            return (
+              <li key={index}>{links}</li>
+            );
+
+          })}
         </ul>
         <ul className={style['footer__infos--networks']}>
           <li>Siga-nos nas redes sociais</li>
           <div className={style['footer__icons--medias']}>
-            <li><img src="../images/facebook.png" alt="logo facebook" /></li>
-            <li><img src="../images/twitter.png" alt="logo twitter" /></li>
-            <li><img src="../images/instagram.png" alt="logo instagram" /></li>
-            <li><img src="../images/youtube.png" alt="logo youtube" /></li>
+
+            {icons.map((icon, index) => {
+              return (
+                <li key={index}><img src={icon.url} alt={icon.description} /></li>
+
+              );
+            })
+            }
           </div>
 
         </ul>

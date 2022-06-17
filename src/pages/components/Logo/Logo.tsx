@@ -17,7 +17,6 @@ export function Logo(props: PropsLogo) {
       <div className={style['header__logo']}>
         <Link to={route.to} className={style['header__logo--index']} >
           {props.dimension === 'big' ? <h1>Reviva Fashion</h1> : <p>Reviva Fashion</p>}
-          <h1>Reviva Fashion</h1>
           <small>by RCHLO</small>
         </Link>
       </div>

@@ -6,6 +6,7 @@ import { useAddCart } from '../../state/hooks/useAddCart';
 import { useRecoilValue } from 'recoil';
 import { CartProducts, cartState } from '../../state/atoms/cartState';
 import { useUpdateStorage } from '../../state/hooks/useUpdateStorage';
+import { DivBackgroundBag,CartButton,ShoppingCartButton } from '../Button/ButtonStyle';
 
 export interface Id {
     id: string
@@ -18,14 +19,11 @@ export function Button(props: Id) {
   const storage = useRecoilValue(storageState);
 
   function verifyQuantity(element: Items): void {
-    console.log('quero ver quando chegar em zero ');
 
     console.log(element.available_amount);
 
     if (element.available_amount - 1 < 0) {
       return alert('Produto esgotado');
-      throw new Error('O Produto está esgotado no estoque');
-
     }
     const updateProduct: CartProducts = {
       ...element,
@@ -37,8 +35,8 @@ export function Button(props: Id) {
     alert('Produto adicionado ao carrinho');
   }
   return (
-    <div className={style['background-bag']}>
-      <button onClick={() => {
+    <DivBackgroundBag>
+      <CartButton onClick={() => {
 
         const element = storage.find((item) => {
           return item.id === props.id;
@@ -47,10 +45,10 @@ export function Button(props: Id) {
         verifyQuantity(element);
 
       }
-
-      } className={style['desc-button']}>POR NA SACOLA</button>
-      <button id="cart-button" className={style['shopping-cart']} disabled></button>
-    </div>
+      
+      } >POR NA SACOLA</CartButton>
+      <ShoppingCartButton id="cart-button" disabled></ShoppingCartButton>
+    </DivBackgroundBag>
   );
 }
 

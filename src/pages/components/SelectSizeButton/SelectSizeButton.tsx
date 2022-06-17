@@ -1,10 +1,27 @@
 import style from './SelectSizeButton.module.scss';
+import {ButtonsSize } from '../../details/DetailsStyle';
+import { useRecoilValue } from 'recoil';
+import { buttonSizeState } from 'pages/state/atoms/buttonSizeState';
+import {DetailsButtonSize} from '../../details/DetailsStyle';
 
 export function SelectSizeButton() {
-  return (
-    <fieldset className={style['details__button--size']}>
+  const buttons = useRecoilValue(buttonSizeState);
 
-      <div className={style['details__button--size--p']}>
+  return (
+    <ButtonsSize>
+
+      {buttons.map(button=>{
+        return(
+
+          <DetailsButtonSize key={button.size_letter}>
+            <input type="radio" name="size" value="0" id="radio-1" />
+            <label htmlFor="radio-1">Tamanho {button.size_letter}</label>
+          </DetailsButtonSize>
+  
+        );
+      })}
+
+      {/* <div className={style['details__button--size--p']}>
         <input type="radio" name="size" value="0" id="radio-1" />
         <label htmlFor="radio-1">Tamanho P</label>
       </div>
@@ -17,8 +34,8 @@ export function SelectSizeButton() {
       <div className={style['details__button--size--g']}>
         <input type="radio" name="size" value="2" id="radio-3" />
         <label htmlFor="radio-3">Tamanho G</label>
-      </div>
+      </div> */}
 
-    </fieldset>
+    </ButtonsSize>
   );
 }
