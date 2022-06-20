@@ -1,5 +1,4 @@
-import { buttonState } from 'pages/state/atoms/buttonState';
-import { useRecoilValue } from 'recoil';
+
 import styled from 'styled-components';
 import { font_weight_text, tertiary_color } from 'Variables';
 
@@ -54,9 +53,7 @@ export const DetailsGrid = styled.div`
     grid-template-rows: 1fr 0.5fr;
     column-gap: 5%;
     padding: 1%;
-    grid-template-areas: "details__visualize details__visualize details__visualize details__visualize details__button--size"
-        ".     .            .                   .     details__button--size"
-        ".   details__button--cart   details__button--cart    . .   ";
+ 
 
         @media screen and (max-width:1278px) {
 
@@ -64,11 +61,7 @@ export const DetailsGrid = styled.div`
           grid-template-rows: 1fr 1fr 0.5fr 0.5fr;
           row-gap: 3%;
           margin-left: 35px;
-          grid-template-areas:
-              "details__visualize details__visualize "
-              "details__visualize details__visualize"
-              "details__button--size . "
-              "details__button--cart details__button--cart";
+   
   
       }
   
@@ -77,14 +70,7 @@ export const DetailsGrid = styled.div`
           grid-template-columns: 1fr 1fr;
           grid-template-rows: 1fr 1fr 1fr 1fr 0.5fr 1fr;
           row-gap: 3%;
-          grid-template-areas:
-              "details__visualize"
-              "details__visualize"
-              "details__visualize"
-              " details__visualize"
-              "details__button--size"
-              "details__button--cart";
-  
+      
       }
   
 
