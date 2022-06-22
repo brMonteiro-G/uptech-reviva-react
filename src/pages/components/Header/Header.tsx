@@ -1,23 +1,28 @@
-import style from './Header.module.scss'
-import { Navbar } from '../Navbar/Navbar'
-import { Logo } from '../Logo/Logo'
+import style from './Header.module.scss';
+import { Navbar } from '../Navbar/Navbar';
+import { Logo } from '../Logo/Logo';
+import { Link } from 'react-router-dom';
 
 
 export function Header(){
-    return(
-        <header>
-        <div className={style["header"]}>
-            <Logo
-            dimension='big'
-            justify='left'
-            />
+  const route = {
+    label:'cart',
+    to:'/cart'
+  };
+  return(
+    <header>
+      <div className={style['header']}>
+        <Logo
+          dimension='big'
+          justify='left'
+        />
 
-            <div>
-                <a className={style["header__button"]} href="cart.html">Botão para carrinho de compras</a>
-            </div>
+        <div>
+          <Link className={style['header__button']} to={route.to}>Botão para carrinho de compras</Link>
         </div>
+      </div>
        
-        <Navbar/>
+      <Navbar/>
     </header>
-    )
+  );
 } 

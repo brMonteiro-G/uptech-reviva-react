@@ -1,4 +1,4 @@
-@import '../../assets/var';
+@import '../../styles/var.scss';
 .slogan {
     display: grid;
     grid-template-rows: 1fr 1fr;
@@ -45,4 +45,4 @@
     width: 100%;
   }
 
-  @import './Slogan.responsive.scss';
+  @import './Banner.responsive.scss';

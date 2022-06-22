@@ -1,46 +1,57 @@
-import React, { useState } from "react"
-import Inventory from "../../inventory"
-import style from "./Button.module.scss"
-import { Items } from "../windowShopper/Products"
+import { useState } from 'react';
+import style from './Button.module.scss';
+import { Items } from '../windowShopper/Products';
+import { storageState } from '../../state/atoms/storageState';
+import { useAddCart } from '../../state/hooks/useAddCart';
+import { useRecoilValue } from 'recoil';
+import { CartProducts, cartState } from '../../state/atoms/cartState';
+import { useUpdateStorage } from '../../state/hooks/useUpdateStorage';
 
 export interface Id {
-    id: number
+    id: string
 }
 
 export function Button(props: Id) {
 
-    const [productsOnStorage, setProductsOnStorage] = useState(Inventory.inventory)
-    const [productsOnCart, setProductsOnCart] = useState([])
+  const updateStorage = useUpdateStorage();
+  const addProductInCart = useAddCart();
+  const storage = useRecoilValue(storageState);
 
-    function verifyQuantity(element: Items): void {
-        if (element.available_amount - 1 < 0) {
-            return alert("Produto esgotado")
+  function verifyQuantity(element: Items): void {
+    console.log('quero ver quando chegar em zero ');
 
-        }
-        element.available_amount = element.available_amount - 1
-        UpdateStorage()
-        alert("Produto adicionado ao carrinho")
+    console.log(element.available_amount);
+
+    if (element.available_amount - 1 < 0) {
+      return alert('Produto esgotado');
+      throw new Error('O Produto está esgotado no estoque');
+
     }
+    const updateProduct: CartProducts = {
+      ...element,
+      units_in_cart: 0
+    };
 
-    function UpdateStorage() {
-        setProductsOnStorage([...productsOnStorage])
-        localStorage.setItem("Items", JSON.stringify(productsOnStorage))
-    }
+    addProductInCart(updateProduct);
+    updateStorage(updateProduct);
+    alert('Produto adicionado ao carrinho');
+  }
+  return (
+    <div className={style['background-bag']}>
+      <button onClick={() => {
 
-    function addToCart(element:Items){
-    }
+        const element = storage.find((item) => {
+          return item.id === props.id;
+        });
 
-    return (
-        <div className={style["background-bag"]}>
-            <button onClick={() => {
-                const element = productsOnStorage[props.id]
-                verifyQuantity(element)
-            }
+        verifyQuantity(element);
 
-            } className={style["desc-button"]}> POR NA SACOLA</button>
-            <button id="cart-button" className={style["shopping-cart"]} disabled></button>
-        </div>
-    )
+      }
+
+      } className={style['desc-button']}>POR NA SACOLA</button>
+      <button id="cart-button" className={style['shopping-cart']} disabled></button>
+    </div>
+  );
 }
 
- 
+
