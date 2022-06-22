@@ -1,6 +1,6 @@
 
 import { useRecoilValue } from 'recoil';
-import { postState } from '../../state/atoms/static/postState';
+import { postState } from 'state/atoms/static/postState';
 import { Article, OrientationPost, PositionPost } from './Article/Article';
 import { LeftPost, RightPost, RightArticle } from './PostsStyle';
 

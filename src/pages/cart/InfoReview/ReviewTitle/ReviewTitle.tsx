@@ -1,5 +1,5 @@
-import { cartTitlesState } from 'pages/state/atoms/static/cartTitlesState';
 import { useRecoilValue } from 'recoil';
+import { cartTitlesState } from 'state/atoms/static/cartTitlesState';
 
 export function ReviewTitle() {
   const titles = useRecoilValue(cartTitlesState);
@@ -12,7 +12,7 @@ export function ReviewTitle() {
           </div>
         );
       })}
-      ;
+      
     </>
   );
 }

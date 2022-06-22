@@ -38,7 +38,9 @@ export const CartButton = styled.button`
 `;
 
 export const ShoppingCartButton = styled.button`
-  background-image: url(\"../../../../public/images/shopping-bag.png\");
+  background-image: url(${process.env.PUBLIC_URL}images/shopping-bag.png);
+  border:none;
+  background-color:${tertiary_color};
   background-repeat: no-repeat;
   background-position: 50% 50%;
 `;

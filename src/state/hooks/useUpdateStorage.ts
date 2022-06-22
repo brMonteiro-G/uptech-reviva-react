@@ -1,6 +1,7 @@
+import { Items } from '../../pages/components/windowShopper/Products';
+import { updateValues } from 'pages/utils/updateValue';
 import { useSetRecoilState } from 'recoil';
-import { Items } from '../../components/windowShopper/Products';
-import { updateValues } from '../../utils/updateValue';
+
 import { CartProducts } from '../atoms/dynamic/cartState';
 import { storageState } from '../atoms/dynamic/storageState';
 

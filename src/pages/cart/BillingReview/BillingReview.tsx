@@ -1,12 +1,12 @@
-import { cartState } from 'pages/state/atoms/dynamic/cartState';
 import { useRecoilValue } from 'recoil';
-import { ReviewPayment, ReviewPaymentConfig } from './BillingReviewStyle';
+import { cartState } from 'state/atoms/dynamic/cartState';
+import { ButtonPayment, ReviewPayment, ReviewPaymentConfig } from './BillingReviewStyle';
 
 export function BillingReview() {
   const getCart = useRecoilValue(cartState);
   const cart = [...getCart];
   const total = cart.reduce(
-    (acc, currentValue) => (acc += currentValue.price),
+    (acc, currentValue) => (acc += (currentValue.price*currentValue.units_in_cart)),
     0
   );
 
@@ -17,15 +17,15 @@ export function BillingReview() {
           return (
             <>
               <p key={productsInCart.id}>
-                2x
-                {(productsInCart.price + productsInCart.price * 0.1).toFixed(2)}{' '}
-                = R$ {productsInCart.price.toFixed(2)}
+                {productsInCart.units_in_cart}x
+                {(productsInCart.price).toFixed(2)}{' '}
+                = R$ {(productsInCart.price*productsInCart.units_in_cart).toFixed(2)}
               </p>
             </>
           );
-        })}
+        })} 
         <p>Total: R${total.toFixed(2)}</p>
-        <button>Ir para pagamento</button>
+        <ButtonPayment as='button'>Ir para pagamento</ButtonPayment>
       </ReviewPaymentConfig>
     </ReviewPayment>
   );

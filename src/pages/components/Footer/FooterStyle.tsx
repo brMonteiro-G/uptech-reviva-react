@@ -9,7 +9,7 @@ export const FooterTemplate = styled.footer`
     font-size: calc($font-size-text * 1.1);
     font-weight: ${font_weight_text};
   }
-`;
+`; 
 
 export const FooterInfos = styled.div`
   display: grid;
@@ -21,6 +21,7 @@ export const FooterInfos = styled.div`
     text-align: center;
     justify-content: center;
   }
+  
 `;
 
 export const FooterIcons = styled(FooterInfos)`

@@ -1,6 +1,6 @@
+import { Items } from '../../../pages/components/windowShopper/Products';
 import { atom } from 'recoil';
-import { Items } from '../../../components/windowShopper/Products';
-import Inventory from '../../../inventory';
+import Inventory from 'pages/inventory';
 
 export const storageState = atom<Items[]>({
   key: 'storageState',

@@ -17,7 +17,7 @@ export const HeaderButton = styled.button`
 `;
 
 export const HeaderLinkButton = styled(Link)`
-  background-image: url('../../../../public/images/shopping-bag\ \(1\).png');
+  background-image: url(${process.env.PUBLIC_URL}images/shopping-bag-header.png);
   background-position: center;
   background-repeat: no-repeat;
   background-size: auto;

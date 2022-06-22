@@ -1,5 +1,5 @@
-import { linksState } from 'pages/state/atoms/static/linksState';
 import { useRecoilValue } from 'recoil';
+import { linksState } from 'state/atoms/static/linksState';
 import {NavbarLink, NavbarTemplate} from './NavbarStyle';
 
 export function Navbar() {

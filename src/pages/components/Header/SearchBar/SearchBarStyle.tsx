@@ -14,7 +14,7 @@ export const SearchBarTemplate = styled.fieldset`
 `;
 
 export const SearchBarButton = styled.button`
-  background-image: url('../../../../public/images/shopping-bag.png');
+  background-image: url(${process.env.PUBLIC_URL}images/search.png);
   background-color: ${tertiary_color};
   background-repeat: no-repeat;
   background-position: 50% 50%;
@@ -24,6 +24,7 @@ export const SearchBarButton = styled.button`
   border: none;
 
   &:hover {
+    cursor:pointer;
     transition: 0.5s all ease-in;
     transform: scale(1.1);
   }

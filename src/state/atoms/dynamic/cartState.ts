@@ -1,5 +1,5 @@
+import { Items } from '../../../../src/pages/components/windowShopper/Products';
 import { atom } from 'recoil';
-import { Items } from '../../../components/windowShopper/Products';
 
 
 export interface CartProducts extends Items{

@@ -1,7 +1,6 @@
 import Inventory from '../../inventory';
 import { ReactElement, useState } from 'react';
 import { Button } from '../Button/Button';
-import { storageState } from '../../state/atoms/dynamic/storageState';
 import { useRecoilValue } from 'recoil';
 import { Link } from 'react-router-dom';
 import {
@@ -13,6 +12,7 @@ import {
   ProductName,
   ProductPrice,
 } from './ProductsStyle';
+import { storageState } from 'state/atoms/dynamic/storageState';
 
 export interface Items {
   name: string;

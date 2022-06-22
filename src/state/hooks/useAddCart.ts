@@ -1,5 +1,5 @@
+import { updateValues } from 'pages/utils/updateValue';
 import { useSetRecoilState } from 'recoil';
-import { updateValues } from '../../utils/updateValue';
 import { CartProducts, cartState } from '../atoms/dynamic/cartState';
 
 export const useAddCart = () => {

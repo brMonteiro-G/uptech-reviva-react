@@ -1,6 +1,4 @@
 import { Dimensions } from '../../components/Logo/LogoConfig';
-import { iconsState } from 'pages/state/atoms/static/iconsState';
-import { linksState } from 'pages/state/atoms/static/linksState';
 import { useRecoilValue } from 'recoil';
 import { Logo } from '../Logo/Logo';
 import style from './Footer.module.scss';
@@ -8,11 +6,13 @@ import { Teste } from './FooterStyle';
 import {
   FooterIcons,
   FooterInfos,
-  FooterNewsletter,
+  FooterNewsletter, 
   FooterTemplate,
 } from './FooterStyle';
-import { contactsState } from 'pages/state/atoms/static/contactsState';
 import { NavbarLink } from '../Navbar/NavbarStyle';
+import { contactsState } from 'state/atoms/static/contactsState';
+import { iconsState } from 'state/atoms/static/iconsState';
+import { linksState } from 'state/atoms/static/linksState';
 
 export function Footer() {
   const pageLinks = useRecoilValue(linksState);
@@ -24,7 +24,7 @@ export function Footer() {
       <Logo dimension={Dimensions.BIG} justify='right' />
 
       <FooterInfos>
-        <ul className={style['footer__infos--menu']}>
+        <ul >
           {pageLinks.map((item, index) => {
             return (
               <li key={index}>

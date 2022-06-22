@@ -1,6 +1,6 @@
 //import {ButtonsSize } from '../../details/DetailsStyle';
 import { useRecoilValue } from 'recoil';
-import { buttonSizeState } from 'pages/state/atoms/static/buttonSizeState';
+import { buttonSizeState } from 'state/atoms/static/buttonSizeState';
 import { ButtonSize } from './SelectSizeButtonStyle';
 
 export function SelectSizeButton() {
