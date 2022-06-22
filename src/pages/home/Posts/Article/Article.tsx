@@ -1,5 +1,5 @@
 import { useRecoilState, useRecoilValue } from 'recoil';
-import { postState } from '../../../state/atoms/postState';
+import { postState } from '../../../state/atoms/static/postState';
 
 
 export enum PositionPost {

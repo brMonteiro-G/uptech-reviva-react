@@ -1,7 +1,7 @@
 
-import { cartState } from 'pages/state/atoms/cartState';
+import { cartState } from 'pages/state/atoms/dynamic/cartState';
 import { useRecoilValue } from 'recoil';
-import style from './ImageProductReview.module.scss';
+import { ImageProductTemplate,ImageProduct } from './ImageProductReviewStyle';
 
 export function ImageProductReview() {
 
@@ -9,14 +9,14 @@ export function ImageProductReview() {
   const images = [...getImages];
 
   return (
-    <div className={`${style.review__image}`}>
-
+    <ImageProductTemplate>
+ 
       {images.map(item => {
 
-        return (<img className={style['review__image--setup']} key={images.indexOf(item)} src={process.env.PUBLIC_URL + item.images[0].url} alt={item.images[0].description} />
+        return (<ImageProduct  key={images.indexOf(item)} src={process.env.PUBLIC_URL + item.images[0].url} alt={item.images[0].description} />
         );
       })}
 
-    </div>
+    </ImageProductTemplate>
   );
-}
+} 

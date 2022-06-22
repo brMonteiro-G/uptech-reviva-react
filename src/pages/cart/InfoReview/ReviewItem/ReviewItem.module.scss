@@ -51,50 +51,50 @@
 
 }
 
-//tentar refatorar @each?
+// //tentar refatorar @each?
 
-.details__button--size--p input+label:before {
-    border: none;
-    cursor: pointer;
-    border: 2px solid $tertiary-color ;
-    @include button-size(p);
-}
+// .details__button--size--p input+label:before {
+//     border: none;
+//     cursor: pointer;
+//     border: 2px solid $tertiary-color ;
+//     @include button-size(p);
+// }
 
-.details__button--size--p input:checked+label:before {
-    background-color: rgba($tertiary-color, 0.5);
-    transform: scale(1.1);
-    transition: all 0.5s;
-}
-
-
-
-.details__button--size--m input+label:before {
-    border: none;
-    cursor: pointer;
-    border: 2px solid $tertiary-color ;
-    @include button-size(m);
-}
-
-.details__button--size--m input:checked+label:before {
-    background-color: rgba($tertiary-color, 0.5);
-    transform: scale(1.1);
-    transition: all 0.5s;
-}
+// .details__button--size--p input:checked+label:before {
+//     background-color: rgba($tertiary-color, 0.5);
+//     transform: scale(1.1);
+//     transition: all 0.5s;
+// }
 
 
 
-.details__button--size--g input+label:before {
-    border: none;
-    cursor: pointer;
-    border: 2px solid $tertiary-color ;
-    @include button-size(g);
-}
+// .details__button--size--m input+label:before {
+//     border: none;
+//     cursor: pointer;
+//     border: 2px solid $tertiary-color ;
+//     @include button-size(m);
+// }
 
-.details__button--size--g input:checked+label:before {
-    background-color: rgba($tertiary-color, 0.5);
-    transform: scale(1.1);
-    transition: all 0.5s;
-}
+// .details__button--size--m input:checked+label:before {
+//     background-color: rgba($tertiary-color, 0.5);
+//     transform: scale(1.1);
+//     transition: all 0.5s;
+// }
+
+
+
+// .details__button--size--g input+label:before {
+//     border: none;
+//     cursor: pointer;
+//     border: 2px solid $tertiary-color ;
+//     @include button-size(g);
+// }
+
+// .details__button--size--g input:checked+label:before {
+//     background-color: rgba($tertiary-color, 0.5);
+//     transform: scale(1.1);
+//     transition: all 0.5s;
+// }
 
 .review__select {
     width: 8%;

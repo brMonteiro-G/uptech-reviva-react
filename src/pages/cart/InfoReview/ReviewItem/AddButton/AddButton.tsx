@@ -1,4 +1,4 @@
-import { CartProducts } from '../../../../state/atoms/cartState';
+import { CartProducts } from '../../../../state/atoms/dynamic/cartState';
 import { updateValues } from '../../../../utils/updateValue';
 import { ProductsInCartProps } from '../ReviewItem';
 

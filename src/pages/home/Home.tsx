@@ -1,10 +1,11 @@
-import style from './Home.module.scss';
-import productsStyle from '../components/windowShopper/Products.module.scss';
+
 import { Banner } from './Banner/Banner';
 import { Posts } from './Posts/Posts';
 import { useRecoilValue } from 'recoil';
-import { storageState } from '../state/atoms/storageState';
+import { storageState } from '../state/atoms/dynamic/storageState';
 import Products from '../components/windowShopper/Products';
+import { ArticleSection, Main, Subtitle } from './HomeStyle';
+import { GridProducts } from '../components/windowShopper/ProductsStyle';
 
 
 
@@ -14,39 +15,39 @@ export default function Home() {
 
   return (
     <>
-      <main className={style['main']}>
-        <p className={style['main__subtitle--first']}>Últimos lançamentos</p>
+      <Main >
+        <Subtitle id="first" >Últimos lançamentos</Subtitle>
 
-        <section className={productsStyle['grid-prod']}>
+        <GridProducts>
           <Products
             texto="section1"
           />
 
-        </section>
+        </GridProducts>
 
         <Banner />
 
-        <p className={style['main__subtitle--second']}>Coleção de vintage 2022</p>
-        <section className={productsStyle['grid-prod']}>
+        <Subtitle id="second">Coleção de vintage 2022</Subtitle>
+        <GridProducts>
           <Products
             texto="section2"
           />
 
-        </section>
+        </GridProducts>
 
-        <p className={style['main__subtitle--third']}>Na dúvida sobre combinar suas roupas e ficar incrível?
-        </p>
-        <p className={style['main__subtitle--fourth']}> Confira nossas dicas em nosso blog.</p>
+        <Subtitle id="third" >Na dúvida sobre combinar suas roupas e ficar incrível?
+        </Subtitle>
+        <Subtitle id="fourth" > Confira nossas dicas em nosso blog.</Subtitle>
 
 
 
-        <section className={style['article']}>
+        <ArticleSection>
 
           <Posts />
 
 
-        </section>
-      </main>
+        </ArticleSection>
+      </Main>
 
 
 

@@ -1,8 +1,8 @@
 
 import { useRecoilValue } from 'recoil';
-import { postState } from '../../state/atoms/postState';
+import { postState } from '../../state/atoms/static/postState';
 import { Article, OrientationPost, PositionPost } from './Article/Article';
-import style from './Posts.module.scss';
+import { LeftPost, RightPost, RightArticle } from './PostsStyle';
 
 export function Posts() {
 
@@ -10,13 +10,13 @@ export function Posts() {
 
   return (
     <>
-      <article className={style['article--left']}>
+      <LeftPost>
         {postImages.map((post) => {
 
           if (post.category === 1) {
             return (<Article
               position={PositionPost.LEFT}
-              title={post.title}
+              title={post.title} 
               url_image={post.url_image}
               description={post.description}
             />
@@ -26,9 +26,9 @@ export function Posts() {
         )
         }
 
-      </article>
-      <div className={style['article--middle']}>
-        <article className={style['article--right']}>
+      </LeftPost>
+      <RightPost>
+        <RightArticle>
 
           {postImages.map((post) => {
 
@@ -46,9 +46,9 @@ export function Posts() {
           )
           }
 
-        </article >
+        </RightArticle>
 
-      </div >
+      </RightPost >
 
     </>
   );

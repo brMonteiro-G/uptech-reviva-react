@@ -1,24 +1,18 @@
 import { BillingReview } from '../BillingReview/BillingReview';
-import { ImageProductReview } from '../ImageProductReview/ImageProductReview';
 import { InfoReview } from '../InfoReview/InfoReview';
-import style from './ProductReview.module.scss';
+import {ReviewTemplate,PaymentReview} from './ProductReviewStyle';
 
 export function ProductReview() {
   return (
-
-    <section className={`${style.review}`}>
-
-
-      <div className={style.infoReview}>
+    <ReviewTemplate>
+      <div>
         <div>
           <InfoReview />
         </div>
       </div>
-      <div className={style.paymentReview}>
+      <PaymentReview>
         <BillingReview />
-      </div>
-
-    </section>
-
+      </PaymentReview>
+    </ReviewTemplate>
   );
 }

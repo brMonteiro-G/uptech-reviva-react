@@ -2,6 +2,9 @@ import style from './Header.module.scss';
 import { Navbar } from '../Navbar/Navbar';
 import { Logo } from '../Logo/Logo';
 import { Link } from 'react-router-dom';
+import { Dimensions } from '../../components/Logo/LogoConfig';
+import { HeaderButton, HeaderTemplate,HeaderLinkButton } from './HeaderStyle';
+
 
 
 export function Header(){
@@ -11,16 +14,16 @@ export function Header(){
   };
   return(
     <header>
-      <div className={style['header']}>
+      <HeaderTemplate>
         <Logo
-          dimension='big'
+          dimension={Dimensions.MEDIUM}
           justify='left'
         />
 
-        <div>
-          <Link className={style['header__button']} to={route.to}>Botão para carrinho de compras</Link>
-        </div>
-      </div>
+        <HeaderButton>
+          <HeaderLinkButton  to={route.to}  >Botão para carrinho de compras</HeaderLinkButton>
+        </HeaderButton>
+      </HeaderTemplate>
        
       <Navbar/>
     </header>

@@ -1,79 +1,78 @@
-import { iconsState } from 'pages/state/atoms/iconsState';
-import { linksState } from 'pages/state/atoms/linksState';
+import { Dimensions } from '../../components/Logo/LogoConfig';
+import { iconsState } from 'pages/state/atoms/static/iconsState';
+import { linksState } from 'pages/state/atoms/static/linksState';
 import { useRecoilValue } from 'recoil';
 import { Logo } from '../Logo/Logo';
 import style from './Footer.module.scss';
-
+import { Teste } from './FooterStyle';
+import {
+  FooterIcons,
+  FooterInfos,
+  FooterNewsletter,
+  FooterTemplate,
+} from './FooterStyle';
+import { contactsState } from 'pages/state/atoms/static/contactsState';
+import { NavbarLink } from '../Navbar/NavbarStyle';
 
 export function Footer() {
-
   const pageLinks = useRecoilValue(linksState);
   const icons = useRecoilValue(iconsState);
+  const contatctsIcons = useRecoilValue(contactsState);
 
   return (
-    <footer className={style['footer']}>
-      <Logo
-        dimension="big"
-        justify="right"
-      />
+    <FooterTemplate>
+      <Logo dimension={Dimensions.BIG} justify='right' />
 
-
-      <div className={style['footer__infos']}>
-
-
+      <FooterInfos>
         <ul className={style['footer__infos--menu']}>
-          {pageLinks.map((links, index) => {
+          {pageLinks.map((item, index) => {
             return (
-              <li key={index}>{links}</li>
+              <li key={index}>
+                <NavbarLink to={item.href}>{item.page}</NavbarLink>
+              </li>
             );
-
           })}
         </ul>
+
         <ul className={style['footer__infos--networks']}>
           <li>Siga-nos nas redes sociais</li>
-          <div className={style['footer__icons--medias']}>
-
+          <FooterIcons>
             {icons.map((icon, index) => {
               return (
-                <li key={index}><img src={icon.url} alt={icon.description} /></li>
-
+                <li key={index}>
+                  <img src={icon.url} alt={icon.description} />
+                </li>
               );
-            })
-            }
-          </div>
-
+            })}
+          </FooterIcons>
         </ul>
+
         <ul className={style['footer__infos--contact']}>
           <li>Entre em contato</li>
 
           <li>Contato</li>
           <li>reviva@rchlo.com.br</li>
-          <div className={style['footer__icons']}>
-            <li>WhatsApp</li>
-            <i className={style['footer__icons--whatsapp']}></i>
-          </div>
-          <div className={style['footer__icons']}>
-            <li>(11) 2123-3321</li>
-            <i className={style['footer__icons--contact']}></i>
-          </div>
-
-        </ul>
-        <ul className={style['footer__infos--newsletter']}>
-          <li>Assine nossa newsletter</li>
-          <div className={style['footer__input']}>
-            <li>
-              <input className={style['input-newsletter']} type="text" />
-            </li>
-            <li>
-              <button className={style['newsletter-button']}>ASSINAR JÁ</button>
-            </li>
-          </div>
-
+          <>
+            {contatctsIcons.map((contact) => {
+              return (
+                // eslint-disable-next-line react/jsx-key
+                <FooterIcons as='div'>
+                  <Teste itemRef={contact.urlImage}>{contact.title}</Teste>
+                </FooterIcons>
+              );
+            })}
+          </>
         </ul>
 
-      </div>
+        <FooterNewsletter>
+          <p>Assine nossa newsletter</p>
+          <div>
+            <input type='text' />
 
-    </footer>
-
+            <button>ASSINAR JÁ</button>
+          </div>
+        </FooterNewsletter>
+      </FooterInfos>
+    </FooterTemplate>
   );
 }

@@ -1,4 +1,4 @@
-import { CartProducts } from '../state/atoms/cartState';
+import { CartProducts } from '../state/atoms/dynamic/cartState';
 
 export function updateValues(product: CartProducts, type: string) {
   const updateItem: CartProducts = {

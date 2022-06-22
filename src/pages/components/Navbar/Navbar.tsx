@@ -1,23 +1,23 @@
-import { linksState } from 'pages/state/atoms/linksState';
+import { linksState } from 'pages/state/atoms/static/linksState';
 import { useRecoilValue } from 'recoil';
-import style from './Navbar.module.scss';
+import {NavbarLink, NavbarTemplate} from './NavbarStyle';
 
 export function Navbar() {
   const pageLinks = useRecoilValue(linksState);
 
   return (
-    <nav>
-      <ul className={style['navbar']}>
-        {pageLinks.map((link, index) => {
+    <nav> 
+      <NavbarTemplate>
+        {pageLinks.map((item, index) => {
           return (
             <li key={index}>
-              <a className={style['navbar__link']} href="#">{link}</a>
+              <NavbarLink to={item.href} >{item.page}</NavbarLink>
             </li>
           );
         })}
 
-      </ul>
+      </NavbarTemplate>
 
     </nav>
-  );
+  ); 
 } 

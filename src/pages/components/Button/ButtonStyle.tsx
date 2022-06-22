@@ -4,11 +4,10 @@ import { tertiary_color } from 'Variables';
 export const DivBackgroundBag = styled.div`
   display: grid;
   grid-template-columns: 3fr 1fr;
-  grid-template-rows: 42px;
+  grid-template-rows: 3em;
   justify-content: center;
   width: 285px;
   border-radius: 1%;
-  margin-top: 6em;
 
   img {
     justify-self: center;
@@ -19,6 +18,10 @@ export const DivBackgroundBag = styled.div`
   p {
     align-self: center;
     justify-self: flex-end;
+  }
+  @media(max-width:1200px){
+    grid-template-rows: 3em;
+    width: 46vw;
   }
 `;
 

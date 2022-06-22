@@ -1,4 +1,4 @@
-import { SearchBar } from './components/SearchBar/SearchBar';
+import { SearchBar } from './components/Header/SearchBar/SearchBar';
 import { Footer } from './components/Footer/Footer';
 import { Header } from './components/Header/Header';
 import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';

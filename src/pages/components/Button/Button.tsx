@@ -1,10 +1,10 @@
 import { useState } from 'react';
 import style from './Button.module.scss';
 import { Items } from '../windowShopper/Products';
-import { storageState } from '../../state/atoms/storageState';
+import { storageState } from '../../state/atoms/dynamic/storageState';
 import { useAddCart } from '../../state/hooks/useAddCart';
 import { useRecoilValue } from 'recoil';
-import { CartProducts, cartState } from '../../state/atoms/cartState';
+import { CartProducts, cartState } from '../../state/atoms/dynamic/cartState';
 import { useUpdateStorage } from '../../state/hooks/useUpdateStorage';
 import { DivBackgroundBag,CartButton,ShoppingCartButton } from '../Button/ButtonStyle';
 

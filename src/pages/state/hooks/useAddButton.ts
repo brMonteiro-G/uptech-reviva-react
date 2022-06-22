@@ -1,6 +1,6 @@
 import {  useSetRecoilState } from 'recoil';
-import { buttonState } from '../atoms/buttonState';
-import { CartProducts } from '../atoms/cartState';
+import { buttonState } from '../atoms/dynamic/buttonState';
+import { CartProducts } from '../atoms/dynamic/cartState';
 
 export const useAddButton = () => {
   const setAddButton = useSetRecoilState(buttonState);

@@ -1,7 +1,7 @@
 /* eslint-disable react/prop-types */
 import { SelectSizeButton } from '../components/SelectSizeButton/SelectSizeButton';
 import { Banner } from 'pages/home/Banner/Banner';
-import { storageState } from 'pages/state/atoms/storageState';
+import { storageState } from 'pages/state/atoms/dynamic/storageState';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { useParams } from 'react-router-dom';
 import {
@@ -19,11 +19,9 @@ import {
   DivButtonsDetails,
 } from '../components/Button/ButtonStyle';
 import { Button, Id } from '../components/Button/Button';
-import { useEffect, useState } from 'react';
-import { teste } from 'pages/state/atoms/teste';
 
 export function Details() {
-  
+
   const recomendations = useRecoilValue(storageState);
   const displayRecomendations = [...recomendations];
   const id = useParams().id;

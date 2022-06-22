@@ -3,7 +3,7 @@ import { Sizes } from './sizes';
 import { v4 as uuidv4 } from 'uuid';
 
 
-export default class Inventory {
+export default class Inventory { 
 
   public static available_products_in_inventory: Array<Items> = [
 

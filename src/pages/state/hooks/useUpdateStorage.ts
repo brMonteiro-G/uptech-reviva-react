@@ -1,8 +1,8 @@
 import { useSetRecoilState } from 'recoil';
 import { Items } from '../../components/windowShopper/Products';
 import { updateValues } from '../../utils/updateValue';
-import { CartProducts } from '../atoms/cartState';
-import { storageState } from '../atoms/storageState';
+import { CartProducts } from '../atoms/dynamic/cartState';
+import { storageState } from '../atoms/dynamic/storageState';
 
 export const useUpdateStorage = () => {
 

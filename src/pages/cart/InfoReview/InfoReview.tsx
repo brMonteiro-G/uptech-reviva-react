@@ -1,5 +1,5 @@
 
-import { cartState } from 'pages/state/atoms/cartState';
+import { cartState } from 'pages/state/atoms/dynamic/cartState';
 import { useRecoilValue } from 'recoil';
 import { ImageProductReview } from '../ImageProductReview/ImageProductReview';
 import style from './InfoReview.module.scss';
