@@ -14,6 +14,7 @@ import {
 } from './ProductsStyle';
 import { storageState } from 'state/atoms/dynamic/storageState';
 
+
 export interface Items {
   name: string;
   id: string;
@@ -37,6 +38,7 @@ export default function Products(props: Props) {
 
   function template(element: Items, index: number): ReactElement {
     return (
+
       <BoxModel data-id={index}>
         <Link to={'/details/' + element.id}>
           <DivImageButtons>
@@ -52,6 +54,7 @@ export default function Products(props: Props) {
             <ProductPrice>R$ {element.price.toFixed(2)} </ProductPrice>
           </ProductInfo>
 
+
           <Button id={element.id} />
         </ProductContent>
       </BoxModel>
@@ -59,10 +62,12 @@ export default function Products(props: Props) {
   }
   return (
     <>
+
       {productsContainer.map((element, index) => {
         if (props.texto.includes('1')) {
           if (index <= 3) {
             return template(element, index);
+
           }
         }
         if (props.texto.includes('2')) {
