@@ -1,73 +1,87 @@
+/* eslint-disable react/prop-types */
 import { SelectSizeButton } from '../components/SelectSizeButton/SelectSizeButton';
 import { Banner } from 'pages/home/Banner/Banner';
-import { storageState } from 'pages/state/atoms/storageState';
-import { useRecoilValue } from 'recoil';
+import { useRecoilValue, useSetRecoilState } from 'recoil';
+import { useParams } from 'react-router-dom';
+import {
+  DetailsGrid,
+  DetailsInfo,
+  DetailsVisualize,
+  DetailsSection,
+  DetailsImage,
+  RecomendationsSection,
+  RecomendationsVisualize,
+  RecomendationsProducts,
+} from './DetailsStyle';
+import {
+  CartButtonDetails,
+  DivButtonsDetails,
+} from '../components/Button/ButtonStyle';
+import { Button, Id } from '../components/Button/Button';
+import { storageState } from 'state/atoms/dynamic/storageState';
 
 export function Details() {
 
   const recomendations = useRecoilValue(storageState);
   const displayRecomendations = [...recomendations];
+  const id = useParams().id;
+  const displayProduct = displayRecomendations.find((product) => product.id === id);
+  const props: Id = {
+    id: id
+  };
+  console.log(props.id);
+  //usar useEffect
+
   return (
     <>
-
-      <section>
-
-        <div className="details__model">
-          <img className="details__image" src="../images/image-model-women-coat.webp"
-            alt="Modelo utilizando blusa feminina"/>
+      <DetailsSection>
+        <div className='details__model'>
+          <DetailsImage
+            src={displayProduct.images[0].url}
+            alt={displayProduct.images[0].description}
+          />
         </div>
-        <div>
+        <DetailsInfo>
+          <h1>
+            {displayProduct.name} R$ {displayProduct.price.toFixed(2)}
+          </h1>
+          <p>{displayProduct.description}</p>
 
-          <h1>Blusa feminina Kaienne R$129,90</h1>
-          <p>A Blusa feminina Kaienne Curta Ampla Decote Redondo Folhagem Azul AK by Riachuelo é a escolha
-            perfeita
-            para criar looks confortáveis e práticos! Confeccionada em malha, a blusa combina super bem com
-            calça reta e bota de cano baixo, aposte!
-          </p>
-
-          <div>
-            <img className="details__visualize--1" src="../images/image-model-women-coat-whole.webp"
-              alt="imagem por inteiro da modelo"/>
-            <img className="details__visualize--2" src="../images/image-model-women-coat-back.webp"
-              alt="imagem da parte de trás da modelo"/>
-            <img className="details__visualize--3" src="../images/image-model-women-coat-near.webp"
-              alt="imagem com foco próximo da modelo"/>
-            <img className="details__visualize--4" src="../images/image-model-women-coat.webp"
-              alt="imagem da cintura pra cima da modelo"/>
-
-            <SelectSizeButton />
-
-            <button className="details__button--cart">Por na sacola</button>
-
-          </div>
-
-        </div>
-
-      </section>
+          <DetailsGrid>
+            <>
+              {displayProduct.images.map((image) => {
+                return (
+                  <DetailsVisualize
+                    key={displayProduct.id}
+                    src={image.url}
+                    alt={image.description}
+                  />
+                );
+              })}
+              <SelectSizeButton />
+              {/* <Button id={props.id} ></Button> */}
+              <DivButtonsDetails>
+                <CartButtonDetails>POR NA SACOLA</CartButtonDetails>
+              </DivButtonsDetails>
+            </>
+          </DetailsGrid>
+        </DetailsInfo>
+      </DetailsSection>
 
       <Banner />
 
-      <section className="recomendations">
+      <RecomendationsSection>
         <h2>Recomendações</h2>
-        <div className="recomendations__visualize">
-
+        <RecomendationsVisualize>
           {displayRecomendations.slice(0, 4).map((product) => {
             return (
-
-              <figure key={product.id} className="recomendations__products">
-                <img src={product.images[0].url}
-                  alt={product.description} />
-
-              </figure>
+              <RecomendationsProducts key={product.id}>
+                <img src={product.images[0].url} alt={product.description} />
+              </RecomendationsProducts>
             );
-          }
-          )
-          }
-        </div>
-
-      </section>
+          })}
+        </RecomendationsVisualize>
+      </RecomendationsSection>
     </>
-
-
   );
 }

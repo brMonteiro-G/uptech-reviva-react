@@ -1,59 +1,38 @@
-import style from './Home.module.scss';
-import productsStyle from '../components/windowShopper/Products.module.scss';
 import { Banner } from './Banner/Banner';
 import { Posts } from './Posts/Posts';
 import { useRecoilValue } from 'recoil';
-import { storageState } from '../state/atoms/storageState';
 import Products from '../components/windowShopper/Products';
-
-
+import { ArticleSection, Main, Subtitle } from './HomeStyle';
+import { GridProducts } from '../components/windowShopper/ProductsStyle';
+import { storageState } from 'state/atoms/dynamic/storageState';
 
 export default function Home() {
-  const productsInStorage = useRecoilValue(storageState);    
+  const productsInStorage = useRecoilValue(storageState);
   localStorage.setItem('Items', JSON.stringify(productsInStorage));
 
   return (
-    <>
-      <main className={style['main']}>
-        <p className={style['main__subtitle--first']}>Últimos lançamentos</p>
+    <Main>
+      <Subtitle id='first'>Últimos lançamentos</Subtitle>
 
-        <section className={productsStyle['grid-prod']}>
-          <Products
-            texto="section1"
-          />
+      <GridProducts>
+        <Products texto='section1' />
+      </GridProducts>
 
-        </section>
+      <Banner />
 
-        <Banner />
+      <Subtitle id='second'>Coleção de vintage 2022</Subtitle>
+      <GridProducts>
+        <Products texto='section2' />
+      </GridProducts>
 
-        <p className={style['main__subtitle--second']}>Coleção de vintage 2022</p>
-        <section className={productsStyle['grid-prod']}>
-          <Products
-            texto="section2"
-          />
+      <Subtitle id='third'>
+        Na dúvida sobre combinar suas roupas e ficar incrível?
+      </Subtitle>
+      <Subtitle id='fourth'> Confira nossas dicas em nosso blog.</Subtitle>
 
-        </section>
-
-        <p className={style['main__subtitle--third']}>Na dúvida sobre combinar suas roupas e ficar incrível?
-        </p>
-        <p className={style['main__subtitle--fourth']}> Confira nossas dicas em nosso blog.</p>
-
-
-
-        <section className={style['article']}>
-
-          <Posts />
-
-
-        </section>
-      </main>
-
-
-
-    </>
-
-
+      <ArticleSection>
+        <Posts />
+      </ArticleSection>
+    </Main>
   );
-
 }
-

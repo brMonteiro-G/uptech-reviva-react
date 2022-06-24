@@ -1,23 +1,18 @@
+import { useRecoilValue } from 'recoil';
+import { cartTitlesState } from 'state/atoms/static/cartTitlesState';
+
 export function ReviewTitle() {
+  const titles = useRecoilValue(cartTitlesState);
   return (
     <>
-      <div className="review__description--top">
-        <strong>Produto</strong>
-      </div>
-      <div className="review__size--top">
-        <strong>Tamanho escolhido</strong>
-      </div>
-      <div className="review__value--top">
-        <strong>Valor</strong>
-
-      </div>
-      <div className="review__amount--top">
-        <strong>Quantidade</strong>
-
-      </div>
-      <div className="review__subtotal--top">
-        <strong>Subtotal</strong>
-      </div>
+      {titles.map((title, index) => {
+        return (
+          <div key={index}>
+            <strong>{title}</strong>
+          </div>
+        );
+      })}
+      
     </>
   );
 }
