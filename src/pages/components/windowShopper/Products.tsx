@@ -1,7 +1,6 @@
 import Inventory from '../../inventory';
-import { ReactElement, useState } from 'react';
+import { ReactElement, useContext} from 'react';
 import { Button } from '../Button/Button';
-import { useRecoilValue } from 'recoil';
 import { Link } from 'react-router-dom';
 import {
   BoxModel,
@@ -12,7 +11,7 @@ import {
   ProductName,
   ProductPrice,
 } from './ProductsStyle';
-import { storageState } from 'state/atoms/dynamic/storageState';
+import { StorageContext } from 'common/StorageContext';
 
 export interface Items {
   name: string;
@@ -33,7 +32,7 @@ export interface Props {
 }
 
 export default function Products(props: Props) {
-  const productsContainer = useRecoilValue(storageState);
+  const productsContainer = useContext(StorageContext);
 
   function template(element: Items, index: number): ReactElement {
     return (

@@ -1,6 +1,5 @@
 /* eslint-disable react/prop-types */
 import { SelectSizeButton } from '../components/SelectSizeButton/SelectSizeButton';
-import { Banner } from 'pages/home/Banner/Banner';
 import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { useParams } from 'react-router-dom';
 import {
@@ -17,19 +16,22 @@ import {
   CartButtonDetails,
   DivButtonsDetails,
 } from '../components/Button/ButtonStyle';
-import { Button, Id } from '../components/Button/Button';
+import { Id } from '../components/Button/Button';
 import { storageState } from 'state/atoms/dynamic/storageState';
+import { Banner } from 'components/Banner/Banner';
+import { useContext } from 'react';
+import { StorageContext } from 'common/StorageContext';
 
 export function Details() {
-
-  const recomendations = useRecoilValue(storageState);
+  
+  //const recomendations = useRecoilValue(storageState);
+  const recomendations = useContext(StorageContext);
   const displayRecomendations = [...recomendations];
   const id = useParams().id;
   const displayProduct = displayRecomendations.find((product) => product.id === id);
   const props: Id = {
     id: id
   };
-  console.log(props.id);
   //usar useEffect
 
   return (

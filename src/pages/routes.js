@@ -6,25 +6,29 @@ import { Cart } from './cart/CartIndex';
 import Home from './home/Home';
 import { Details } from './details/Details';
 import { GlobalStyle } from 'GlobalStyle';
-
+import { StorageContext } from 'common/StorageContext';
+import { CartContext } from 'common/CartContext';
+import Inventory from 'inventory';
 
 export default function AppRouter() {
   return (
     <Router>
       <GlobalStyle />
-
       <Header />
       <SearchBar />
-      <Routes>
+      <StorageContext.Provider
+        value={Inventory.available_products_in_inventory}
+      >
+        <Routes>
+          <Route path={'/' | 'home'} element={<Home />} />
 
-        <Route path={'/' | 'home'} element={<Home />} />
-        <Route path='/cart' element={<Cart />} />
-        <Route path='/details/:id' element={<Details />} />
+          <Route path='/cart' element={<Cart />} />
 
-      </Routes>
+          <Route path='/details/:id' element={<Details />} />
+        </Routes>
+      </StorageContext.Provider>
+
       <Footer />
-
     </Router>
   );
-
 }
