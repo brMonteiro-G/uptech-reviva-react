@@ -1,8 +1,7 @@
-import { useRecoilValue } from 'recoil';
-import { cartTitlesState } from 'state/atoms/static/cartTitlesState';
+import {cartReviewTitle as titles} from 'pages/assets/cartReviewTitle';
 
 export function ReviewTitle() {
-  const titles = useRecoilValue(cartTitlesState);
+
   return (
     <>
       {titles.map((title, index) => {

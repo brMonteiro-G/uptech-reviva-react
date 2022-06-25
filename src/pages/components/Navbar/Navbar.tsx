@@ -1,9 +1,7 @@
-import { useRecoilValue } from 'recoil';
-import { linksState } from 'state/atoms/static/linksState';
+import { linksList as pageLinks } from 'pages/assets/linksList';
 import {NavbarLink, NavbarTemplate} from './NavbarStyle';
 
 export function Navbar() {
-  const pageLinks = useRecoilValue(linksState);
 
   return (
     <nav> 

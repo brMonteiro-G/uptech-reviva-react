@@ -4,7 +4,8 @@
     "paths": {
       "components":["/pages/components"],
       "utils":["utils"],
-      "state": ["state"]
+      "state": ["state"],
+      "assets":["/pages/assets"]
     },
     "target": "es5",
     "lib": [

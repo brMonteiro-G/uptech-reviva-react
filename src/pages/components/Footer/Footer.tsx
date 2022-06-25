@@ -10,14 +10,11 @@ import {
   FooterTemplate,
 } from './FooterStyle';
 import { NavbarLink } from '../Navbar/NavbarStyle';
-import { contactsState } from 'state/atoms/static/contactsState';
-import { iconsState } from 'state/atoms/static/iconsState';
-import { linksState } from 'state/atoms/static/linksState';
+import { contactsInfoList as contactsInfos} from 'pages/assets/contactsInfoList';
+import { iconsList as icons} from 'pages/assets/iconsList';
+import { linksList as pageLinks} from 'pages/assets/linksList';
 
 export function Footer() {
-  const pageLinks = useRecoilValue(linksState);
-  const icons = useRecoilValue(iconsState);
-  const contatctsIcons = useRecoilValue(contactsState);
 
   return (
     <FooterTemplate>
@@ -53,7 +50,7 @@ export function Footer() {
           <li>Contato</li>
           <li>reviva@rchlo.com.br</li>
           <>
-            {contatctsIcons.map((contact) => {
+            {contactsInfos.map((contact) => {
               return (
                 // eslint-disable-next-line react/jsx-key
                 <FooterIcons as='div'>
