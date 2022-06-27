@@ -73,7 +73,6 @@ export default function Products(props: Props) {
             return template(element, index);
           }
         }
-        Inventory.localStorageItem();
       })}
     </>
   );

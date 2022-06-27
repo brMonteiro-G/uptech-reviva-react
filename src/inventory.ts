@@ -77,10 +77,10 @@ export default class Inventory {
       available_size: [Sizes.SMALL, Sizes.MEDIUM, Sizes.LARGE],
       available_amount: 12,
       images: [
-        { url: '/images/imagem_5.1.jpg', description: 'Blusa feminina Kaienne no tamanho M' },
-        { url: '/images/imagem_5.2.jpg', description: 'Blusa feminina Kaienne no tamanho M' },
-        { url: '/images/imagem_5.3.jpg', description: 'Blusa feminina Kaienne no tamanho M' },
-        { url: '/images/imagem_5.4.jpg', description: 'Blusa feminina Kaienne no tamanho M' }
+        { url: '/images/imagem_5.1.jpg', description: 'Camisa Polo Masculina' },
+        { url: '/images/imagem_5.2.jpg', description: 'Camisa Polo Masculina' },
+        { url: '/images/imagem_5.3.jpg', description: 'Camisa Polo Masculina' },
+        { url: '/images/imagem_5.4.jpg', description: 'Camisa Polo Masculina' }
       ],
     },
     //details.html 
@@ -109,10 +109,10 @@ export default class Inventory {
       available_size: [Sizes.SMALL, Sizes.MEDIUM, Sizes.LARGE],
       available_amount: 12,
       images: [
-        { url: '/images/imagem_7.1.jpg', description: 'Blusa feminina Kaienne no tamanho M' },
-        { url: '/images/imagem_7.2.jpg', description: 'Blusa feminina Kaienne no tamanho M' },
-        { url: '/images/imagem_7.3.jpg', description: 'Blusa feminina Kaienne no tamanho M' },
-        { url: '/images/imagem_7.4.jpg', description: 'Blusa feminina Kaienne no tamanho M' }
+        { url: '/images/imagem_7.1.jpg', description: 'Regata Masculina Malha' },
+        { url: '/images/imagem_7.2.jpg', description: 'Regata Masculina Malha' },
+        { url: '/images/imagem_7.3.jpg', description: 'Regata Masculina Malha' },
+        { url: '/images/imagem_7.4.jpg', description: 'Regata Masculina Malha' }
       ],
     },
     {
@@ -124,21 +124,16 @@ export default class Inventory {
       available_size: [Sizes.SMALL, Sizes.MEDIUM, Sizes.LARGE],
       available_amount: 12,
       images: [
-        { url: '/images/imagem_8.1.jpg', description: 'Blusa feminina Kaienne no tamanho M' },
-        { url: '/images/imagem_8.2.jpg', description: 'Blusa feminina Kaienne no tamanho M' },
-        { url: '/images/imagem_8.3.jpg', description: 'Blusa feminina Kaienne no tamanho M' },
-        { url: '/images/imagem_8.4.jpg', description: 'Blusa feminina Kaienne no tamanho M' }
+        { url: '/images/imagem_8.1.jpg', description: 'Macacão Feminino Alça Fina' },
+        { url: '/images/imagem_8.2.jpg', description: 'Macacão Feminino Alça Fina' },
+        { url: '/images/imagem_8.3.jpg', description: 'Macacão Feminino Alça Fina' },
+        { url: '/images/imagem_8.4.jpg', description: 'Macacão Feminino Alça Fina' }
       ],
     }
 
   ];
 
-  //localStorageItem: string = localStorage.getItem("itens")!
-  public static localStorageItem(): void {
-    localStorage.setItem('Items', JSON.stringify(Inventory.available_products_in_inventory));
-  }
-
-
+  
 
 
 

@@ -1,6 +1,10 @@
 
 import { Addbutton } from './AddButton/AddButton';
-import { ReviewItemTemplate,ImageProduct,ImageProductTemplate } from './ReviewItemStyle';
+import {
+  ReviewItemTemplate,
+  ImageProduct,
+  ImageProductTemplate,
+} from './ReviewItemStyle';
 
 import { ContentItemText, DisplaySelectSizeButton, ItemContent } from 'pages/cart/ProductReview/ProductReviewStyle';
 import { SelectSizeButton } from 'components/SelectSizeButton/SelectSizeButton';
@@ -22,17 +26,22 @@ export function ReviewItem({ item }: ProductsInCartProps, productsInCart:Product
           <SelectSizeButton />
         </DisplaySelectSizeButton>
 
-        <ContentItemText key='value' >R$ {item.price.toFixed(2)}</ContentItemText>
+        <ContentItemText key='value'> 
+          R$ {item.price.toFixed(2)}
+        </ContentItemText>
         <ReviewItemTemplate>
           <div>
-            {/* 
-                        <button id="plus" onClick={() => {
-                            const product = updateValues(item, "increase")
-                            const teste = quantity.find()
-                            //setButton(product)
-
-                        }}>+</button> */}
-            <Addbutton item={item} />
+            {/* <button
+              id='plus'
+              onClick={() => {
+                const product = updateValues(item, 'increase');
+                const teste = quantity.find();
+                //setButton(product)
+              }}
+            >
+              +
+            </button> */}
+            <Addbutton item={item} operation='minus' />
           </div>
           <div>
             <input
@@ -49,10 +58,12 @@ export function ReviewItem({ item }: ProductsInCartProps, productsInCart:Product
                         }}
 
                         >-</button> */}
-            <Addbutton item={item} />
+            <Addbutton item={item} operation='plus' />
           </div>
         </ReviewItemTemplate>
-        <ContentItemText key='subtotal'>R$ {(item.price * item.units_in_cart).toFixed(2)}</ContentItemText>
+        <ContentItemText key='subtotal'>
+          R$ {(item.price * item.units_in_cart).toFixed(2)}
+        </ContentItemText>
       </ItemContent>
     </>
   );
