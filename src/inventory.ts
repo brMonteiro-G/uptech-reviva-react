@@ -1,6 +1,6 @@
-import { Items } from './components/windowShopper/Products';
 import { Sizes } from './sizes';
 import { v4 as uuidv4 } from 'uuid';
+import { Items } from 'components/windowShopper/Products';
 
 
 export default class Inventory { 

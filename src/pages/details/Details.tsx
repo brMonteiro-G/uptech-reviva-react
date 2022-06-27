@@ -1,6 +1,4 @@
 /* eslint-disable react/prop-types */
-import { SelectSizeButton } from '../components/SelectSizeButton/SelectSizeButton';
-import { useRecoilValue, useSetRecoilState } from 'recoil';
 import { useParams } from 'react-router-dom';
 import {
   DetailsGrid,
@@ -12,25 +10,24 @@ import {
   RecomendationsVisualize,
   RecomendationsProducts,
 } from './DetailsStyle';
-import {
-  CartButtonDetails,
-  DivButtonsDetails,
-} from '../components/Button/ButtonStyle';
-import { Id } from '../components/Button/Button';
-import { storageState } from 'state/atoms/dynamic/storageState';
-import { Banner } from 'components/Banner/Banner';
+
+
 import { useContext } from 'react';
-import { StorageContext } from 'common/StorageContext';
+import { StorageContext } from 'contexts/StorageContext';
+import { Banner } from 'components/Banner/Banner';
+import { Id } from 'components/Button/Button';
+import { DivButtonsDetails, CartButtonDetails } from 'components/Button/ButtonStyle';
+import { SelectSizeButton } from 'components/SelectSizeButton/SelectSizeButton';
 
 export function Details() {
-  
-  //const recomendations = useRecoilValue(storageState);
-  const recomendations = useContext(StorageContext);
-  const displayRecomendations = [...recomendations];
+  const { products, setProducts } = useContext(StorageContext);
+  const displayRecomendations = [...products];
   const id = useParams().id;
-  const displayProduct = displayRecomendations.find((product) => product.id === id);
+  const displayProduct = displayRecomendations.find(
+    (product) => product.id === id
+  );
   const props: Id = {
-    id: id
+    id: id,
   };
   //usar useEffect
 

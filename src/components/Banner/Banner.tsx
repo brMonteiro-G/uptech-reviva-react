@@ -1,5 +1,5 @@
-import { Dimensions } from '../../components/Logo/LogoConfig';
-import { Logo } from '../../components/Logo/Logo';
+import { Dimensions } from 'components/Logo/LogoConfig';
+import { Logo } from 'components/Logo/Logo';
 import style from './Banner.module.scss';
 import { BannerTemplate, BannerText, BannerTextContainer } from './BannerStyle';
 

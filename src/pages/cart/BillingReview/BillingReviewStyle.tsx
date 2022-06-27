@@ -1,4 +1,4 @@
-import { CartButtonDetails } from '../../components/Button/ButtonStyle';
+import { CartButtonDetails } from 'components/Button/ButtonStyle';
 import styled from 'styled-components';
 import { font_size_text, font_weight_text, primary_color, tertiary_color } from 'Variables';
 

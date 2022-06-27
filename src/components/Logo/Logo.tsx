@@ -1,6 +1,6 @@
 import { LogoLink, LogoTemplate, Subtitle, Title } from './LogoStyle';
 import { Link } from 'react-router-dom';
-import { Dimensions } from '../../../pages/components/Logo/LogoConfig';
+import { Dimensions } from './LogoConfig';
 
 interface PropsLogo {
   dimension: Dimensions;

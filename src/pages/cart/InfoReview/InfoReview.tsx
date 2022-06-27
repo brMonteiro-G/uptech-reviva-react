@@ -1,5 +1,7 @@
+import { CartContext } from 'contexts/CartContext';
+import { StorageContext } from 'contexts/StorageContext';
+import { useContext } from 'react';
 import { useRecoilValue } from 'recoil';
-import { cartState } from 'state/atoms/dynamic/cartState';
 import style from './InfoReview.module.scss';
 import {
   InfoReviewContent,
@@ -10,26 +12,24 @@ import { ReviewItem } from './ReviewItem/ReviewItem';
 import { ReviewTitle } from './ReviewTitle/ReviewTitle';
 
 export function InfoReview() {
-  const getItem = useRecoilValue(cartState);
+  const {cart, setCart} = useContext(StorageContext);
 
-  const productsInCart = [...getItem];
-
-  //console.log(productsOnCart)
   return (
     <InfoReviewTemplate>
       <>
         <InfoReviewTitle>
           <ReviewTitle />
         </InfoReviewTitle>
-        {productsInCart.map((product, productCartindex) => {
+        {cart.map((product, productCartindex) => {
           return (
             <InfoReviewContent key={product.id}>
               <ReviewItem
                 //melhorar esse codigo
 
-                item={productsInCart.find(
+                item={cart.find(
                   (_, indice) => indice === productCartindex
-                )}
+                )} 
+                productsInCart = {cart}
               />
             </InfoReviewContent>
           );

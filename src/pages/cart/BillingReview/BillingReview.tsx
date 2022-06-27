@@ -1,10 +1,13 @@
-import { useRecoilValue } from 'recoil';
-import { cartState } from 'state/atoms/dynamic/cartState';
+import { CartProducts } from 'contexts/CartContext';
+import { ProductscontextProps } from 'contexts/StorageContext';
 import { ButtonPayment, ReviewPayment, ReviewPaymentConfig } from './BillingReviewStyle';
+interface Props  {
+cart: CartProducts[];
+setCart: (product:any)=>void
+}
 
-export function BillingReview() {
-  const getCart = useRecoilValue(cartState);
-  const cart = [...getCart];
+export function BillingReview({cart, setCart}:Props ) {
+
   const total = cart.reduce(
     (acc, currentValue) => (acc += (currentValue.price*currentValue.units_in_cart)),
     0

@@ -1,5 +1,5 @@
-import Inventory from '../../inventory';
-import { ReactElement, useContext} from 'react';
+import Inventory from 'inventory';
+import { ReactElement, useContext, useEffect } from 'react';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';
 import {
@@ -11,7 +11,7 @@ import {
   ProductName,
   ProductPrice,
 } from './ProductsStyle';
-import { StorageContext } from 'common/StorageContext';
+import { StorageContext } from 'contexts/StorageContext';
 
 export interface Items {
   name: string;
@@ -32,7 +32,11 @@ export interface Props {
 }
 
 export default function Products(props: Props) {
-  const productsContainer = useContext(StorageContext);
+  const { products, setProducts } = useContext(StorageContext);
+
+  useEffect(() => {
+    setProducts && setProducts(products);
+  }, []);
 
   function template(element: Items, index: number): ReactElement {
     return (
@@ -58,7 +62,7 @@ export default function Products(props: Props) {
   }
   return (
     <>
-      {productsContainer.map((element, index) => {
+      {products.map((element, index) => {
         if (props.texto.includes('1')) {
           if (index <= 3) {
             return template(element, index);

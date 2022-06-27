@@ -1,17 +1,18 @@
 
+import { PostContext } from 'contexts/PostsContext';
+import { useContext } from 'react';
 import { useRecoilValue } from 'recoil';
-import { postState } from 'state/atoms/static/postState';
 import { Article, OrientationPost, PositionPost } from './Article/Article';
 import { LeftPost, RightPost, RightArticle } from './PostsStyle';
 
 export function Posts() {
 
-  const postImages = useRecoilValue(postState);
+  const {posts,setPosts} = useContext(PostContext);
 
   return (
     <>
       <LeftPost>
-        {postImages.map((post) => {
+        {posts.map((post) => {
 
           if (post.category === 1) {
             return (<Article
@@ -30,7 +31,7 @@ export function Posts() {
       <RightPost>
         <RightArticle>
 
-          {postImages.map((post) => {
+          {posts.map((post) => {
 
             if (post.category === 2) {
               return (<Article

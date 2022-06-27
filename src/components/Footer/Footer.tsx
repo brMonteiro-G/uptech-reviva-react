@@ -1,27 +1,25 @@
-import { Dimensions } from '../../components/Logo/LogoConfig';
-import { useRecoilValue } from 'recoil';
+import { Dimensions } from '../Logo/LogoConfig';
 import { Logo } from '../Logo/Logo';
 import style from './Footer.module.scss';
 import { Teste } from './FooterStyle';
 import {
   FooterIcons,
   FooterInfos,
-  FooterNewsletter, 
+  FooterNewsletter,
   FooterTemplate,
 } from './FooterStyle';
 import { NavbarLink } from '../Navbar/NavbarStyle';
-import { contactsInfoList as contactsInfos} from 'pages/assets/contactsInfoList';
-import { iconsList as icons} from 'pages/assets/iconsList';
-import { linksList as pageLinks} from 'pages/assets/linksList';
+import { contactsInfoList as contactsInfo } from 'pages/assets/contactsInfoList';
+import { iconsList as icons } from 'pages/assets/iconsList';
+import { linksList as pageLinks } from 'pages/assets/linksList';
 
 export function Footer() {
-
   return (
     <FooterTemplate>
       <Logo dimension={Dimensions.BIG} justify='right' />
 
       <FooterInfos>
-        <ul >
+        <ul>
           {pageLinks.map((item, index) => {
             return (
               <li key={index}>
@@ -50,7 +48,7 @@ export function Footer() {
           <li>Contato</li>
           <li>reviva@rchlo.com.br</li>
           <>
-            {contactsInfos.map((contact) => {
+            {contactsInfo.map((contact) => {
               return (
                 // eslint-disable-next-line react/jsx-key
                 <FooterIcons as='div'>

@@ -1,11 +1,7 @@
-//import {ButtonsSize } from '../../details/DetailsStyle';
-import { useRecoilValue } from 'recoil';
-import { buttonSizeState } from 'state/atoms/static/buttonSizeState';
+import { buttonSizeList as buttons } from 'pages/assets/buttonSizeList';
 import { ButtonSize } from './SelectSizeButtonStyle';
 
 export function SelectSizeButton() {
-  const buttons = useRecoilValue(buttonSizeState);
-
   return (
     <>
       {buttons.map((button) => {

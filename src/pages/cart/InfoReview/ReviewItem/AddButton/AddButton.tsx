@@ -1,5 +1,5 @@
 
-import { updateValues } from '../../../../utils/updateValue';
+import { updateValues } from 'utils/updateValue';
 import { ProductsInCartProps } from '../ReviewItem';
 
 export function Addbutton({item}:ProductsInCartProps) {

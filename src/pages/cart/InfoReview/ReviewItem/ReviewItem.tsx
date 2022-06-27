@@ -1,16 +1,16 @@
-import { SelectSizeButton } from '../../../components/SelectSizeButton/SelectSizeButton';
-import { useRecoilValue } from 'recoil';
 
 import { Addbutton } from './AddButton/AddButton';
 import { ReviewItemTemplate,ImageProduct,ImageProductTemplate } from './ReviewItemStyle';
 
 import { ContentItemText, DisplaySelectSizeButton, ItemContent } from 'pages/cart/ProductReview/ProductReviewStyle';
-import { CartProducts } from 'state/atoms/dynamic/cartState';
+import { SelectSizeButton } from 'components/SelectSizeButton/SelectSizeButton';
+import { CartProducts } from 'contexts/CartContext';
 export interface ProductsInCartProps {
   item: CartProducts | undefined;
+  productsInCart?:CartProducts[]
 }
 
-export function ReviewItem({ item }: ProductsInCartProps) {
+export function ReviewItem({ item }: ProductsInCartProps, productsInCart:ProductsInCartProps) {
   return (
     <>
       <ImageProductTemplate>

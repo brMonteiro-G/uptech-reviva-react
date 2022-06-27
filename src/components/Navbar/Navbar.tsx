@@ -1,4 +1,4 @@
-import { linksList as pageLinks } from 'pages/assets/linksList';
+import { linksList as pageLinks} from 'pages/assets/linksList';
 import {NavbarLink, NavbarTemplate} from './NavbarStyle';
 
 export function Navbar() {

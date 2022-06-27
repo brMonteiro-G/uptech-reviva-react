@@ -1,8 +1,6 @@
-import style from './Header.module.scss';
 import { Navbar } from '../Navbar/Navbar';
 import { Logo } from '../Logo/Logo';
-import { Link } from 'react-router-dom';
-import { Dimensions } from '../../components/Logo/LogoConfig';
+import { Dimensions } from '../Logo/LogoConfig';
 import { HeaderButton, HeaderTemplate,HeaderLinkButton } from './HeaderStyle';
 
 

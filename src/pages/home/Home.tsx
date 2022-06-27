@@ -1,14 +1,10 @@
-import { Banner } from './Banner/Banner';
 import { Posts } from './Posts/Posts';
-import { useRecoilValue } from 'recoil';
-import Products from '../components/windowShopper/Products';
 import { ArticleSection, Main, Subtitle } from './HomeStyle';
-import { GridProducts } from '../components/windowShopper/ProductsStyle';
-import { storageState } from 'state/atoms/dynamic/storageState';
+import { Banner } from 'components/Banner/Banner';
+import Products from 'components/windowShopper/Products';
+import { GridProducts } from 'components/windowShopper/ProductsStyle';
 
 export default function Home() {
-  const productsInStorage = useRecoilValue(storageState);
-  localStorage.setItem('Items', JSON.stringify(productsInStorage));
 
   return (
     <Main>

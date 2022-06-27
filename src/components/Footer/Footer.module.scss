@@ -1,11 +1,11 @@
-@import '../../assets/var.scss';
+@import '../../pages/assets/var.scss';
 
 %expand {
     display: flex;
     flex-direction: column;
     align-items: flex-end;
     height: auto;
-    padding: 1%;
+    padding: 1%; 
 
     p,
     h1 {
