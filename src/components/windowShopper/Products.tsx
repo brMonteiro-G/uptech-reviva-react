@@ -1,4 +1,3 @@
-import Inventory from 'inventory';
 import { ReactElement, useContext, useEffect } from 'react';
 import { Button } from '../Button/Button';
 import { Link } from 'react-router-dom';

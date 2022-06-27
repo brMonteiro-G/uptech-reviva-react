@@ -30,7 +30,6 @@ export const FooterIcons = styled(FooterInfos)`
 `;
 
 export const Teste = styled(FooterInfos)`
-  outline: red 1px solid;
   width: min-content;
   height: 30px;
 

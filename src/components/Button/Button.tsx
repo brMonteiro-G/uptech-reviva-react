@@ -8,7 +8,7 @@ import {
 import { useAddCart } from 'state/hooks/useAddCart';
 import { useUpdateStorage } from 'state/hooks/useUpdateStorage';
 import { StorageContext } from 'contexts/StorageContext';
-import { CartContext, CartProducts } from 'contexts/CartContext';
+import { CartProducts } from 'contexts/CartContext';
 
 export interface Id {
   id: string;
@@ -28,9 +28,7 @@ export function Button(props: Id) {
       ...element,
       units_in_cart: 0,
     };
-    console.log('update Product');
 
-    console.log(updateProduct);
     addProductInCart(updateProduct, {cart,setCart});
     updateStorage(updateProduct, { products, setProducts });
 

@@ -4,7 +4,9 @@ import { useContext } from 'react';
 import { CartProducts } from 'contexts/CartContext';
 
 export const useAddButton = () => {
-  const {cart, setCart} = useContext(StorageContext);
+  const { cart, setCart } = useContext(StorageContext);
+  // const updateCart = useAddButton();
+
 
   return (produtoASerAdicionado: CartProducts, operation: string) => {
     produtoASerAdicionado = updateValues(
@@ -13,32 +15,20 @@ export const useAddButton = () => {
     );
 
     return setCart((produtosNoCarrinho) => {
-      console.log(produtoASerAdicionado);
-      console.log(cart);
+      const produto = produtosNoCarrinho.find((produto)=> produto.id === produtoASerAdicionado.id);
+      const index = produtosNoCarrinho.indexOf(produto);
 
-      //const produtoDaLista = produtosNoCarrinho.filter((produtoNoCarrinho)=>produtoNoCarrinho.id === produtoASerAdicionado.id);
-      // const novaLista = [
-
-      // ]
-      // eslint-disable-next-line no-debugger
-      // debugger;
-      // const spliceList = produtosNoCarrinho.splice(
-      //   0,
-      //   1 ,
-      //   produtoASerAdicionado
-      // );
-      // console.log('spliceList');
-
-      // console.log(spliceList);
-      const index = produtosNoCarrinho.indexOf(produtoASerAdicionado);
-
-      const result:Array<any> =[] ;
+      const result: Array<CartProducts> = [];
       if (produtosNoCarrinho.length === 1) {
         result.push(produtoASerAdicionado);
-      }else{
-        result.splice(index,1,produtoASerAdicionado);
+      } else {
+      
+        result.push(
+          ...produtosNoCarrinho.slice(0, index),
+          ...produtosNoCarrinho.splice(index, 1, produtoASerAdicionado),
+          ...produtosNoCarrinho.slice(index + 1)
+        );
       }
-
 
       return result;
     });

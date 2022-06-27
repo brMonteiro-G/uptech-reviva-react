@@ -8,7 +8,7 @@ interface ButtonProps extends ProductsInCartProps {
 }
 
 export function Addbutton({ item, operation }: ButtonProps) {
-  const updateCart = useAddButton();
+
   const addButtonFunction = useAddButton();
   const updateStorage = useUpdateStorage();
   return (
@@ -17,12 +17,6 @@ export function Addbutton({ item, operation }: ButtonProps) {
       onClick={() => {
         addButtonFunction(item, operation);
 
-        // eslint-disable-next-line no-debugger
-        // updateStorage(item);
-        // const teste = use.find((element) => element.name === item.name);
-        // console.log('Estoque atualizado?');
-        // console.log(teste);
-        //const result = updateValues(item, 'increase');
       }}
     >
       {operation === 'plus' ? '+' : '-'}

@@ -8,11 +8,11 @@ interface IContacts {
 export const contactsInfoList: IContacts[] = [
   {
     title: 'WhatsApp',
-    urlImage: '../../../../public/images/whatsapp.png',
+    urlImage: process.env.PUBLIC_URL + 'images/whatsapp.png',
   },
   {
     title: 'Telephone',
     info: '(11) 2123-3321',
-    urlImage: '../../../../public/images/telephone.png',
+    urlImage: process.env.PUBLIC_URL + 'images/telephone-call.png'
   },
 ];

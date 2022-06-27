@@ -18,7 +18,7 @@ export function updateValues(item: CartProducts, type: string) {
         ? newItem.units_in_cart = item.units_in_cart + 1
         : newItem.units_in_cart = item.units_in_cart - 1,
   };
-  
+   
  
   return updateItem;
 }
