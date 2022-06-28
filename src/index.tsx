@@ -1,6 +1,5 @@
 import React from 'react';
 import ReactDOM from 'react-dom/client';
-import { RecoilRoot } from 'recoil';
 import Router from '../src/pages/routes';
 
 const root = ReactDOM.createRoot(
@@ -8,8 +7,6 @@ const root = ReactDOM.createRoot(
 );
 root.render(
   <React.StrictMode>
-    <RecoilRoot>
-      <Router />
-    </RecoilRoot>
+    <Router />
   </React.StrictMode>
 );

@@ -1,6 +1,6 @@
 import { Items } from 'components/windowShopper/Products';
-import { CartProducts } from 'contexts/CartContext';
-import { ProductscontextProps } from 'contexts/StorageContext';
+import { CartProducts } from 'state/contexts/CartContext';
+import { ProductscontextProps } from 'state/contexts/StorageContext';
 import { updateValues } from 'utils/updateValue';
 
 export const useUpdateStorage = () => {

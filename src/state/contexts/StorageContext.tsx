@@ -1,30 +1,28 @@
 import { Items } from 'components/windowShopper/Products';
-import Inventory from 'inventory';
-import { createContext, ReactNode, useState } from 'react';
+import { createContext, ReactNode } from 'react';
+import { useCartState, useSetCartState } from '../CartState';
+import { useSetStorage, useStorage } from '../StorageState';
 import { CartProducts } from './CartContext';
 
 interface ProductsProviderProps {
   children: ReactNode;
 }
-export interface ProductscontextProps { 
+export interface ProductscontextProps {
   products?: Items[];
   setProducts?: (products: any) => void;
-  cart?: CartProducts[];
-  setCart?: (products: any) => void;
 }
 export const StorageContext = createContext<ProductscontextProps>({
   products: [],
-  cart:[]
+  
 });
 
 StorageContext.displayName = 'Storage';
 export const StorageProvider = ({ children }: ProductsProviderProps) => {
-  const [products, setProducts] = useState<Items[]>(
-    Inventory.available_products_in_inventory
-  );
-  const [cart, setCart] = useState<CartProducts[]>([]);
+  const products = useStorage();
+  const setProducts = useSetStorage();
+
   return (
-    <StorageContext.Provider value={{ products, setProducts, cart, setCart }}>
+    <StorageContext.Provider value={{ products, setProducts }}>
       {children}
     </StorageContext.Provider>
   );

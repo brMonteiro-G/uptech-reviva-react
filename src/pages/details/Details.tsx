@@ -13,7 +13,7 @@ import {
 
 
 import { useContext } from 'react';
-import { StorageContext } from 'contexts/StorageContext';
+import { StorageContext } from 'state/contexts/StorageContext';
 import { Banner } from 'components/Banner/Banner';
 import { Id } from 'components/Button/Button';
 import { DivButtonsDetails, CartButtonDetails } from 'components/Button/ButtonStyle';

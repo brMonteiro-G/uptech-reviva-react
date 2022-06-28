@@ -1,5 +1,5 @@
-import { CartProducts } from 'contexts/CartContext';
-import { ProductscontextProps } from 'contexts/StorageContext';
+import { CartProducts } from 'state/contexts/CartContext';
+import { ProductscontextProps } from 'state/contexts/CartContext';
 import { ButtonPayment, ReviewPayment, ReviewPaymentConfig } from './BillingReviewStyle';
 interface Props  {
 cart: CartProducts[];
@@ -15,7 +15,7 @@ export function BillingReview({cart, setCart}:Props ) {
 
   return (
     <ReviewPayment>
-      <ReviewPaymentConfig>
+      <ReviewPaymentConfig> 
         {cart.map((productsInCart) => {
           return (
             <>

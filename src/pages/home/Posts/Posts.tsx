@@ -1,5 +1,5 @@
 
-import { PostContext } from 'contexts/PostsContext';
+import { PostContext } from 'state/contexts/PostsContext';
 import { useContext } from 'react';
 import { useRecoilValue } from 'recoil';
 import { Article, OrientationPost, PositionPost } from './Article/Article';

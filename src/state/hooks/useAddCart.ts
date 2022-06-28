@@ -1,5 +1,5 @@
-import { CartProducts } from 'contexts/CartContext';
-import { ProductscontextProps } from 'contexts/StorageContext';
+import { CartProducts } from 'state/contexts/CartContext';
+import { ProductscontextProps } from 'state/contexts/CartContext';
 import { updateValues } from 'utils/updateValue';
 
 

@@ -8,7 +8,7 @@ import {
 
 import { ContentItemText, DisplaySelectSizeButton, ItemContent } from 'pages/cart/ProductReview/ProductReviewStyle';
 import { SelectSizeButton } from 'components/SelectSizeButton/SelectSizeButton';
-import { CartProducts } from 'contexts/CartContext';
+import { CartProducts } from 'state/contexts/CartContext';
 export interface ProductsInCartProps {
   item: CartProducts | undefined;
   productsInCart?:CartProducts[]

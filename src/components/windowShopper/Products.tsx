@@ -10,7 +10,7 @@ import {
   ProductName,
   ProductPrice,
 } from './ProductsStyle';
-import { StorageContext } from 'contexts/StorageContext';
+import { StorageContext } from 'state/contexts/StorageContext';
 
 export interface Items {
   name: string;
@@ -32,10 +32,6 @@ export interface Props {
 
 export default function Products(props: Props) {
   const { products, setProducts } = useContext(StorageContext);
-
-  useEffect(() => {
-    setProducts && setProducts(products);
-  }, []);
 
   function template(element: Items, index: number): ReactElement {
     return (

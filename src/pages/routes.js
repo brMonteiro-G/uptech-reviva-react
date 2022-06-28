@@ -6,8 +6,9 @@ import { Cart } from './cart/CartIndex';
 import Home from './home/Home';
 import { Details } from './details/Details';
 import { GlobalStyle } from 'GlobalStyle';
-import { StorageProvider } from 'contexts/StorageContext';
-import { PostProvider } from 'contexts/PostsContext';
+import { StorageProvider } from 'state/contexts/StorageContext';
+import { PostProvider } from 'state/contexts/PostsContext';
+import { CartProvider } from 'state/contexts/CartContext';
 
 export default function AppRouter() {
   return (
@@ -16,20 +17,22 @@ export default function AppRouter() {
       <Header />
       <SearchBar />
       <StorageProvider>
-        <Routes>
-          <Route
-            path={'/' | 'home'}
-            element={
-              <PostProvider>
-                <Home />
-              </PostProvider>
-            }
-          />
+        <CartProvider>
+          <Routes>
+            <Route
+              path={'/' | 'home'}
+              element={
+                <PostProvider>
+                  <Home />
+                </PostProvider>
+              }
+            />
 
-          <Route path='/cart' element={<Cart />} />
+            <Route path='/cart' element={<Cart />} />
 
-          <Route path='/details/:id' element={<Details />} />
-        </Routes>
+            <Route path='/details/:id' element={<Details />} />
+          </Routes>
+        </CartProvider>
       </StorageProvider>
 
       <Footer />

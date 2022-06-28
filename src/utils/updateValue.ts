@@ -1,4 +1,4 @@
-import { CartProducts } from 'contexts/CartContext';
+import { CartProducts } from 'state/contexts/CartContext';
 
 export function updateValues(item: CartProducts, type: string) {
 

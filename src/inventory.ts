@@ -1,5 +1,4 @@
 import { Sizes } from './sizes';
-import { v4 as uuidv4 } from 'uuid';
 import { Items } from 'components/windowShopper/Products';
 
 
@@ -9,7 +8,7 @@ export default class Inventory {
 
     {
       name: 'Vestido Midi Feminino AK by Riachuelo',
-      id: uuidv4(),
+      id: '0',
       url: '#',
       price:   129.90,
       description: 'Crie um look jovem e estiloso com o Vestido Longo Feminino Evasê Uma Maria Liso Bege AK by Riachuelo! Confeccionado em malha, o vestido pode ser combinado com tênis casual, deixando seus looks muito descolados!',
@@ -24,7 +23,7 @@ export default class Inventory {
     },
     {
       name: 'Jaqueta Plus Size Masculina by Riachuelo',
-      id: uuidv4(),
+      id: '1',
       url: '#',
       price: 69.90,
       description: 'A Jaqueta Plus Size Masculina Biker PU Preto ALLMAN by Riachuelo é versátil e confortável, perfeito para dias mais frios. Produzida em poliéster, a peça possui fechamento na vista com zíper. Básico e autêntico, esse modelo é superconfortável e garante muita flexibilidade. ',
@@ -39,7 +38,7 @@ export default class Inventory {
     },
     {
       name: 'Camiseta Masculina Estan',
-      id: uuidv4(),
+      id: '2',
       url: '#',
       price: 55.90,
       description: 'A Camiseta Lipp é linda para ser usada em qualquer lugar',
@@ -54,7 +53,7 @@ export default class Inventory {
     },
     {
       name: 'Top Esportivo Feminino Adidas Vermelho',
-      id: uuidv4(),
+      id: '3',
       url: '#',
       price: 149.99,
       description: 'Perfeita escolha para os momentos fitness, o Top Esportivo Feminino Training Suporte Leve Aeroreact  Adidas Vermelho é confeccionado em tecido de toque macio e maleável. Na academia, corrida, ou qualquer lugar, aposte em uma combinação com legging para conforto máximo nos treinos!',
@@ -69,7 +68,7 @@ export default class Inventory {
     },
     {
       name: 'Camisa Polo Masculina by Riachuelo',
-      id: uuidv4(),
+      id: '4',
       url: '#',
       price: 79.90,
       description: `Acreditamos em um mundo que olha para a moda além da próxima estação, promovendo consciência e responsabilidade socioambiental. O programa Moda Que Transforma envolve todas as iniciativas da Riachuelo voltadas para sustentabilidade, responsabilidade social e diversidade.
@@ -87,7 +86,7 @@ export default class Inventory {
     //main.html
     {
       name: 'Blusa Plus Size Feminina by Riachuelo',
-      id: uuidv4(),
+      id:'5' ,
       url: '#',
       price: 89.90      ,
       description: 'Imagine-se num dia de trabalho tranquilo, com tudo fluindo a seu favor. Esse é o mood da Blusa Plus Size Feminina Decote V Folhagem Bege Filipa by Riachuelo! Confeccionada em mix de viscose com elastano, a peça apresenta estampa de folhas e decote V. Experimente combinar com calça social e sandália de salto quadrada para um visual office!',
@@ -102,7 +101,7 @@ export default class Inventory {
     },
     {
       name: 'Regata Masculina Malha by Riachuelo',
-      id: uuidv4(),
+      id:'6' ,
       url: '#',
       price: 35.90,
       description: 'A Regata Masculina Malha Listrada Azul Pool by Riachuelo é produzida em mix de fibras, sendo muito macia e confortável. Com modelagem regular, o diferencial da peça é a padronagem de listras. As peças estampadas são sempre uma boa escolha na hora de compor um look mais despojado. Aposte! Combine com uma bermuda de sarja e tênis para um visual casual.',
@@ -117,7 +116,7 @@ export default class Inventory {
     },
     {
       name: 'Macacão Feminino Alça Fina AK by Riachuelo',
-      id: uuidv4(),
+      id:'7' ,
       url: '#',
       price: 399.90,
       description:'A Macacão Feminino Alça Fina Viscose Folhagem Verde AK by Riachuelo é a escolha certa para criar looks de verão com muito estilo! Confeccionada em malha de viscose, a peça é perfeita para encontros com as amigas e momentos de lazer! Combine com sandália para um visual confortável e descontraído! ',

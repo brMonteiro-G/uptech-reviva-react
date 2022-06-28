@@ -62,7 +62,7 @@ export function Footer() {
         <FooterNewsletter>
           <p>Assine nossa newsletter</p>
           <div>
-            <input type='text' />
+            <input type='email' />
 
             <button>ASSINAR JÁ</button>
           </div>

@@ -7,8 +7,8 @@ import {
 } from './ButtonStyle';
 import { useAddCart } from 'state/hooks/useAddCart';
 import { useUpdateStorage } from 'state/hooks/useUpdateStorage';
-import { StorageContext } from 'contexts/StorageContext';
-import { CartProducts } from 'contexts/CartContext';
+import { StorageContext } from 'state/contexts/StorageContext';
+import { CartContext, CartProducts } from 'state/contexts/CartContext';
 
 export interface Id {
   id: string;
@@ -18,7 +18,7 @@ export function Button(props: Id) {
   const updateStorage = useUpdateStorage();
   const addProductInCart = useAddCart();
   const { products, setProducts } = useContext(StorageContext);
-  const { cart, setCart } = useContext(StorageContext);
+  const { cart, setCart } = useContext(CartContext);
 
   function verifyQuantity(element: Items): void {
     if (element.available_amount - 1 < 0) {

@@ -1,10 +1,9 @@
 import { updateValues } from 'utils/updateValue';
-import { StorageContext } from 'contexts/StorageContext';
 import { useContext } from 'react';
-import { CartProducts } from 'contexts/CartContext';
+import { CartContext, CartProducts } from 'state/contexts/CartContext';
 
 export const useAddButton = () => {
-  const { cart, setCart } = useContext(StorageContext);
+  const { cart, setCart } = useContext(CartContext);
   // const updateCart = useAddButton();
 
 

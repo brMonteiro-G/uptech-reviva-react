@@ -1,7 +1,5 @@
-import { CartContext } from 'contexts/CartContext';
-import { StorageContext } from 'contexts/StorageContext';
+import { CartContext } from 'state/contexts/CartContext';
 import { useContext } from 'react';
-import { useRecoilValue } from 'recoil';
 import style from './InfoReview.module.scss';
 import {
   InfoReviewContent,
@@ -12,7 +10,7 @@ import { ReviewItem } from './ReviewItem/ReviewItem';
 import { ReviewTitle } from './ReviewTitle/ReviewTitle';
 
 export function InfoReview() {
-  const {cart, setCart} = useContext(StorageContext);
+  const {cart, setCart} = useContext(CartContext);
 
   return (
     <InfoReviewTemplate>
